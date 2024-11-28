@@ -1,0 +1,26 @@
+.footer {
+  height: 5%;
+  width: 100vw;
+  background-color: #a6784c77;
+}
+
+.git-logo {
+  height: 35px;
+  width: 60px;
+}
+
+/*Mobile Screen*/
+@media screen and (max-device-width: 425px) {
+  .git-logo {
+    height: 22px;
+    width: 35px;
+  }
+}
+
+/*Tablet Screen*/
+@media screen and (max-device-width: 768px) and (min-width: 426px) {
+  .git-logo {
+    height: 35px;
+    width: 50px;
+  }
+}

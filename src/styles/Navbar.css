@@ -1,0 +1,31 @@
+.navbar {
+  height: 10%;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #a6784c77;
+  color: #17637a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: normal;
+  position: relative;
+}
+
+.app-logo {
+  height: 50px;
+  width: 50px;
+}
+
+/*Mobile Screen*/
+@media screen and (max-device-width: 425px) {
+  .app-logo {
+    height: 45px;
+    width: 75px;
+  }
+  .navbar {
+    font-size: 1em;
+  }
+}

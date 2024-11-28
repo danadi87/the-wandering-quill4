@@ -1,0 +1,17 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-content {
+  margin-left: 200px;
+}
+.book-item {
+  border: 3px solid rgb(12, 59, 12);
+  border-radius: 4%;
+  margin: 20px 20px;
+  background-color: rgb(246, 244, 241);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+}
