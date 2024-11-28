@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./styles/App.css";
-import axios from "axios";
 import Sidebar from "./components/Sidebar.jsx";
 import BooksList from "./assets/BooksList.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,10 +11,20 @@ import WorkWithUs from "./components/WorkWithUs.jsx";
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   //initialize with all books before filtering
   const [filteredBooks, setFilteredBooks] = useState(BooksList);
 
+  //handle the favourite toggle
+  const handleClickFavorite = (id) => {
+    const updatedFavorites = favorites.includes(id)
+      ? favorites.filter((favId) => favId !== id)
+      : [...favorites, id];
+    setFavorites(updatedFavorites);
+  };
+
+  //filter books by genre
   const filterBooks = (genre) => {
     //show all Books
     if (genre === "All") {
@@ -25,20 +34,7 @@ function App() {
       setFilteredBooks(filtered);
     }
   };
-  useEffect(() => {
-    function getList() {
-      axios
-        .get("https://openlibrary.org/search.json?q=the+lord+of+the+rings")
-        .then((response) => {
-          console.log(response.data);
-        })
 
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    getList();
-  }, []);
   return (
     <>
       <BrowserRouter>
@@ -54,6 +50,18 @@ function App() {
           {filteredBooks.map((book, id) => (
             <div key={id} className="book-item">
               <img src={book.cover_image} />
+              <div className="buttons">
+                <button
+                  className="favourite"
+                  onClick={() => handleClickFavorite(book.id)}
+                >
+                  <img src="./assets/images/heart.png" />
+                </button>
+                <button className="cart">
+                  {" "}
+                  <img src="./assets/images/heart.png" />
+                </button>
+              </div>
               <h2>{book.title}</h2>
               <h4>{book.author}</h4>
               <p>{book.genre}</p>
