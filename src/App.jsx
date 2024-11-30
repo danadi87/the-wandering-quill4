@@ -11,6 +11,10 @@ import Footer from "./components/Footer.jsx";
 function App() {
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5353d50d8e1171755e41b0eb52cdee96c6f6cb1f
   //initialize with all books before filtering
   const [filteredBooks, setFilteredBooks] = useState(BooksList);
 
@@ -40,6 +44,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+<<<<<<< HEAD
         <div>
           <Navbar />
           <Sidebar onFilter={filterBooks} />
@@ -69,6 +74,34 @@ function App() {
             ))}
           </div>
           <Footer />
+=======
+        <Navbar />
+        <Sidebar onFilter={filterBooks} />
+        <div className="main-content">
+          {filteredBooks.map((book, id) => (
+            <div key={id} className="book-item">
+              <img src={book.cover_image} />
+              <div className="buttons">
+                <button
+                  className="favourite"
+                  onClick={() => handleClickFavorite(book.id)}
+                >
+                  <img src="./assets/images/heart.png" />
+                </button>
+                <button className="cart">
+                  {" "}
+                  <img src="./assets/images/heart.png" />
+                </button>
+              </div>
+              <h2>{book.title}</h2>
+              <h4>{book.author}</h4>
+              <p>{book.genre}</p>
+              <p>{book.description}</p>
+              <p>{book.pages}</p>
+              <p>{book.publish_year}</p>
+            </div>
+          ))}
+>>>>>>> 5353d50d8e1171755e41b0eb52cdee96c6f6cb1f
         </div>
         <Footer />
       </BrowserRouter>
