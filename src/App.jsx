@@ -9,6 +9,7 @@ import NotFound from "./components/NotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import WorkWithUs from "./components/WorkWithUs.jsx";
+import ApplicantsList from "./components/ApplicantsList.jsx";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -46,6 +47,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/workWithUs" element={<WorkWithUs />} />
+          <Route path="/ApplicantsList" element={<ApplicantsList />} />
           {/*pass on the filter function to the sidebar*/}
         </Routes>
         <Navbar />

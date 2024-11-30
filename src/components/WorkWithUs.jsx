@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const WorkWithUs = () => {
+const WorkWithUs = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -20,7 +20,7 @@ const WorkWithUs = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Handle form submission logic here
+    onSubmit(formData);
     console.log(formData);
   }
 
@@ -171,7 +171,7 @@ const WorkWithUs = () => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="add-property-button">
+        <button type="submit" className="add-application-button">
           Apply!
         </button>
       </form>
