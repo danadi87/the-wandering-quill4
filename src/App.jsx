@@ -7,7 +7,7 @@ import Homepage from "./components/Homepage.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import WorkWithUs from "./components/WorkWithUs.jsx";
+import RequestABook from "./components/RequestABook.jsx";
 import FilteredBooks from "./components/FilteredBooks.jsx";
 import BooksList from "./assets/BooksList.json";
 import BookCard from "./components/BookCard.jsx";
@@ -15,7 +15,7 @@ import FavouritesList from "./components/FavouritesList.jsx";
 import ShoppingCart from "./components/ShoppingCart.jsx";
 import FavoritesContext from "./components/FavoritesContext.jsx";
 import ShoppingCartContext from "./components/ShoppingCartContext.jsx";
-import ApplicantsList from "./components/ApplicantsList.jsx";
+import BooksRequested from "./components/BooksRequested.jsx";
 
 function App() {
   // Access favorites context
@@ -73,34 +73,32 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        {/*pass on the filter function to the sidebar*/}
-        <Sidebar onFilter={filterBooks} onNavigate={handleNavigation} />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/workWithUs" element={<WorkWithUs />} />
-            <Route
-              path="/filtered"
-              element={
-                isFilteredView && filteredBooks.length > 0 ? (
-                  <FilteredBooks books={filteredBooks} />
-                ) : (
-                  <Homepage />
-                )
-              } //redirect to Homepage if no books
-            />
-            <Route path="/book/:title" element={<BookCard />} />
-            <Route path="/favorites" element={<FavouritesList />} />
-            <Route path="/shopping-cart" element={<ShoppingCart />} />
-            <Route path="/workWithUs" element={<WorkWithUs />} />
-            <Route path="/applicantsList" element={<ApplicantsList />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <Navbar />
+      {/*pass on the filter function to the sidebar*/}
+      <Sidebar onFilter={filterBooks} onNavigate={handleNavigation} />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+
+          <Route
+            path="/filtered"
+            element={
+              isFilteredView && filteredBooks.length > 0 ? (
+                <FilteredBooks books={filteredBooks} />
+              ) : (
+                <Homepage />
+              )
+            } //redirect to Homepage if no books
+          />
+          <Route path="/book/:title" element={<BookCard />} />
+          <Route path="/favorites" element={<FavouritesList />} />
+          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/requestABook" element={<RequestABook />} />
+          <Route path="/booksRequested" element={<BooksRequested />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
   );
 }

@@ -9,10 +9,10 @@ const Footer = () => {
         <img src={GitHubLogo} alt="Git Hub Logo" className="git-logo"></img>
       </Link>
       <h2>About us</h2>
-      <Link to="/workWithUs" target="_blank">
-        <h2>Work with us</h2>
+      <Link to="/requestABook" target="_blank">
+        <h2>Request a book</h2>
       </Link>
-      <Link to="/ApplicantsList"></Link>
+      <Link to="/booksRequested"></Link>
     </div>
   );
 };
