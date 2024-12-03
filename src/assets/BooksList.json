@@ -6,7 +6,7 @@
     "genre": "Romance",
     "description": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work <her own darling child> and its vivacious heroine, Elizabeth Bennet, <as delightful a creature as ever appeared in print.> The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen’s radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
     "pages": "279",
-    "cover_image": "..assets/images/PrideandPrejudice.png",
+    "cover_image": "/PrideandPrejudice.png",
     "publish_year": "1813"
   },
   {
@@ -16,7 +16,7 @@
     "genre": "Romance",
     "description": "The circus arrives without warning. No announcements precede it. It is simply there, when yesterday it was not. Within the black-and-white striped canvas tents is an utterly unique experience full of breathtaking amazements. It is called Le Cirque des Rêves, and it is only open at night. But behind the scenes, a fierce competition is underway—a duel between two young magicians, Celia and Marco, who have been trained since childhood expressly for this purpose by their mercurial instructors. Unbeknownst to them, this is a game in which only one can be left standing, and the circus is but the stage for a remarkable battle of imagination and will. Despite themselves, however, Celia and Marco tumble headfirst into love—a deep, magical love that makes the lights flicker and the room grow warm whenever they so much as brush hands.True love or not, the game must play out, and the fates of everyone involved, from the cast of extraordinary circus performers to the patrons, hang in the balance, suspended as precariously as the daring acrobats overhead. Written in rich, seductive prose, this spell-casting novel is a feast for the senses and the heart.",
     "pages": "506",
-    "cover_image": "..assets/images/NightCirus.png",
+    "cover_image": "/NightCirus.png",
     "publish_year": "2011"
   },
   {
@@ -26,7 +26,7 @@
     "genre": "Graphic Novel",
     "description": "Persepolis is the story of Satrapi’s unforgettable childhood and coming of age within a large and loving family in Tehran during the Islamic Revolution; of the contradictions between private and public life in a country plagued by political upheaval; of her high school years in Vienna facing the trials of adolescence far from her family; of her homecoming—both sweet and terrible; and, finally, of her self-imposed exile from her beloved homeland. It is the chronicle of a girlhood and adolescence at once outrageous and familiar, a young life entwined with the history of her country yet filled with the universal trials and joys of growing up. Edgy, searingly observant, and candid, often heartbreaking but threaded throughout with raw humor and hard-earned wisdom—Persepolis is a stunning work from one of the most highly regarded, singularly talented graphic artists at work today.",
     "pages": "341",
-    "cover_image": "..assets/images/persepolis.png",
+    "cover_image": "/persepolis.png",
     "publish_year": "2007"
   },
   {
@@ -36,7 +36,7 @@
     "genre": "Fiction",
     "description": "Red Solo cups? Check. Snacks? Check. Abandoned mansion full of countless horrors that won’t let you leave? Check. The Deinhart Manor has been a looming shadow over town for as long as anyone can remember, and it’s been abandoned for even longer. When the final Deinhart descendent passes, the huge gothic manor is up for sale for the first time ever. Which means Arden can steal the keys from her mom’s real estate office...It’s time for a graduation party that no one will ever forget. Arden and her best friends each have different reasons for wanting to throw the party to end all parties. But when the manor doors bar everyone inside and the walls begin to bleed, all anyone wants to do is make it out alive.",
     "pages": "304",
-    "cover_image": "..assets/images/KillerHouseParty.png",
+    "cover_image": "/KillerHouseParty.png",
     "publish_year": "2024"
   },
   {
@@ -56,7 +56,7 @@
     "genre": "Fiction",
     "description": "One morning, ordinary salesman Gregor Samsa wakes up to find himself transformed into a giant cockroach. Metamorphosis, Kafka's masterpiece of unease and black humour, is one of the twentieth century's most influential works of fiction, and is accompanied here by two more classic stories.",
     "pages": "144",
-    "cover_image": "..assets/images/Metamorphosis.png",
+    "cover_image": "/Metamorphosis.png",
     "publish_year": "1975"
   },
   {
@@ -66,7 +66,7 @@
     "genre": "Fiction",
     "description": "Bastian is nobody's idea of a hero, least of all his own. Through the pages of an old book he discovers a mysterious magical world - a world of dragons, monsters, witches and GIANTS! A world that is doomed unless a human can save it...Can Bastian succeed in battling terrible foes and find the strength he needs to give the Empress a new name?",
     "pages": "528",
-    "cover_image": "..assets/images/TheNeverEndingStory.png",
+    "cover_image": "/TheNeverEndingStory.png",
     "publish_year": "1979"
   },
   {
@@ -76,7 +76,7 @@
     "genre": "Fiction",
     "description": "Gourmet cook Manako Kajii sits in Tokyo Detention Centre convicted of the serial murders of lonely businessmen, who she is said to have seduced with her delicious home cooking. The case has captured the nation's imagination but Kajii refuses to speak with the press, entertaining no visitors. That is, until journalist Rika Machida writes a letter asking for her recipe for beef stew and Kajii can't resist writing back. Rika, the only woman in her news office, works late each night, rarely cooking more than ramen. As the visits unfold between her and the steely Kajii, they are closer to a masterclass in food than journalistic research. Rika hopes this gastronomic exchange will help her soften Kajii but it seems that she might be the one changing. With each meal she eats, something is awakening in her body, might she and Kaji have more in common than she once thought? Inspired by the real case of the convicted con woman and serial killer, <The Konkatsu Killer>, Asako Yuzuki's Butter is a vivid, unsettling exploration of misogyny, obsession, romance and the transgressive pleasures of food in Japan.",
     "pages": "464",
-    "cover_image": "..assets/images/Butter.png",
+    "cover_image": "/Butter.png",
     "publish_year": "2024"
   },
   {
@@ -86,7 +86,7 @@
     "genre": "Fiction",
     "description": "Fifteen-year-old Alex doesn't just like ultra-violence - he also enjoys rape, drugs and Beethoven's ninth. He and his gang of droogs rampage through a dystopian future, hunting for terrible thrills. But when Alex finds himself at the mercy of the state and subject to the ministrations of Dr Brodsky, and the mind-altering treatment of the Ludovico Technique, he discovers that fun is no longer the order of the day. The basis for Stanley Kubrick's notorious 1971 film, A Clockwork Orange is both a virtuoso performance from an electrifying prose stylist and a serious exploration of the morality of free will.",
     "pages": "176",
-    "cover_image": "..assets/images/ClockworkOrange.png",
+    "cover_image": "/ClockworkOrange.png",
     "publish_year": "2020"
   },
   {
@@ -96,7 +96,7 @@
     "genre": "Fiction",
     "description": "28 June 1389, the Field of the Blackbirds. A Christian army made up of Serbs, Bosnians, Albanians and Romanians confront an Ottoman army. In ten hours the battle is over, and the Muslims possess the field; an outcome that has haunted the vanquished ever since. 28 June 1989, the Serb Leader Slobodan Milosevic launches his campaign for a fresh massacre of the Albanians, the majority population of Kosovo. In three short narratives Kadare shows how legends of betrayal and defeat simmered in European civilisation for six hundred years, culminating in the agony of one tiny population at the end of the twentieth century.",
     "pages": "96",
-    "cover_image": "..assets/images/3ElegiesKosovo.png",
+    "cover_image": "/3ElegiesKosovo.png",
     "publish_year": "2011"
   },
   {

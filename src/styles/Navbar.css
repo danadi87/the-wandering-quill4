@@ -1,22 +1,25 @@
 .navbar {
-  height: 20%;
-  width: 90vw;
+  height: 7%; /* Adjusted height for better visibility */
+  width: 100%; /* Full width */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Spread out the items */
   align-items: center;
-  padding-left: 70px;
+  padding: 0 5px; /* Add padding on both sides instead of just left */
   background-color: #a6784c77;
   color: #17637a;
   font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
   font-style: normal;
-  position: relative;
+  position: fixed; /* Make the navbar fixed at the top */
+  top: 0; /* Align to the top */
+  left: 0;
+  z-index: 1000; /*ensure it's above other content*/
 }
 
 .app-logo {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 /*Mobile Screen*/

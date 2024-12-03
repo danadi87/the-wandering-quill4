@@ -1,14 +1,29 @@
 import "../styles/Navbar.css";
+import "./FavouritesList.jsx";
+import "./ShoppingCart.jsx";
+import "./Homepage.jsx";
+import { Link } from "react-router-dom";
+import Logo from "/Logo.png";
+import { useContext } from "react";
+import FavoritesContext from "./FavoritesContext.jsx";
+import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
-import Logo from "../assets/images/Logo.png";
 const Navbar = () => {
+  const { favorites } = useContext(FavoritesContext);
+  const { cart } = useContext(ShoppingCartContext);
   return (
     <div className="navbar">
       <img src={Logo} alt="The Wandering Quill" className="app-logo"></img>
-      <span> The Wandering Quill</span>
+      <Link to="/"> The Wandering Quill</Link>
       <span>My account</span>
-      <span>My Favourites</span>
-      <span>Cart</span>
+      {/*display the favorites count*/}
+      <Link to="/favorites">
+        My Favourites<span>({favorites.length})</span>{" "}
+      </Link>
+      {/*display the shopping cart count*/}
+      <Link to="/cart">
+        Shopping Cart<span>({cart.length})</span>
+      </Link>
     </div>
   );
 };

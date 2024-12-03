@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/Sidebar.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar = ({ onFilter }) => {
+const Sidebar = ({ onFilter, onNavigate }) => {
   const genre = [
     "All",
     "Bestsellers",
@@ -11,6 +13,8 @@ const Sidebar = ({ onFilter }) => {
     "Thriller",
     "Psychology",
   ];
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <div className="card">
@@ -20,6 +24,17 @@ const Sidebar = ({ onFilter }) => {
           </form>
         </div>
         <ul className="sidebar">
+          <li className="homepage">
+            <Link
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate("/");
+              }}
+            >
+              Home
+            </Link>
+          </li>
           {genre.map((genre, id) => (
             <li key={id}>
               <a

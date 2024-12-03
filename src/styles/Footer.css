@@ -1,15 +1,21 @@
 .footer {
-  height: 5%;
-  width: 100vw;
+  height: 3%;
+  width: 100%;
   background-color: #a6784c77;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  position: fixed; /* Fixed the footer at the bottom of the screen */
+  bottom: 0; /* Ensuring it stays at the bottom */
+  padding: 10px 0; /* Adjust the padding as needed for spacing */
+  z-index: 1000; /* Ensure the footer stays on top of other content */
+  left: 0;
 }
 
 .git-logo {
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
 }
 
 /*Mobile Screen*/

@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  top: 0;
+  top: 7%; /* Start the sidebar after the navbar height */
   left: 0;
   width: 220px;
   z-index: 1;
@@ -9,7 +9,7 @@
   padding: 0px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  bottom: 4.5%; /* Subtract the height of the footer (8% of the screen) */
   box-sizing: border-box;
   border: solid 0.75px;
   border-color: rgb(9, 44, 9, 0.7);
