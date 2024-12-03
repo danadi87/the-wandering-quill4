@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const WorkWithUs = () => {
+const WorkWithUs = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -10,20 +11,21 @@ const WorkWithUs = () => {
     phoneNumber: "",
     emailAdress: "",
   });
+  const navigate = useNavigate();
 
-  function handleChange(e) {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  }
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-  }
 
+    const newApplications =
+      JSON.parse(localStorage.getItem("applications")) || [];
+    newApplications.push(formData);
+    localStorage.setItem("applications", JSON.stringify(newApplications));
+    navigate("/");
+  };
   return (
     <div className="formJobs">
       <form className="WorkWithUs" onSubmit={handleSubmit}>
@@ -171,7 +173,7 @@ const WorkWithUs = () => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="add-property-button">
+        <button type="submit" className="add-application-button">
           Apply!
         </button>
       </form>

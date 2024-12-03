@@ -12,6 +12,7 @@ const Footer = () => {
       <Link to="/workWithUs" target="_blank">
         <h2>Work with us</h2>
       </Link>
+      <Link to="/ApplicantsList"></Link>
     </div>
   );
 };
