@@ -1,15 +1,18 @@
-import React from "react";
-import WorkWithUs from "./WorkWithUs";
+import React, { useState } from "react";
 
 const ApplicantsList = () => {
-  const [applications, setAppications] = useState([]);
+  const [applications, setApplications] = useState(
+    JSON.parse(localStorage.getItem("applications")) || []
+  );
+
   const addApplication = (formData) => {
-    setAppications((prev) => [...prev, formData]);
+    const updatedApplications = [...applications, formData];
+    setApplications(updatedApplications);
+    localStorage.setItem("applications", JSON.stringify(updatedApplications));
   };
+
   return (
     <div>
-      <h1>Job Applications</h1>
-      <WorkWithUs onSubmit={addApplication} />
       <h2>Applications received</h2>
       <div className="applications-list">
         {applications.length === 0 ? (

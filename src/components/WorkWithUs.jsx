@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const WorkWithUs = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -10,20 +11,21 @@ const WorkWithUs = ({ onSubmit }) => {
     phoneNumber: "",
     emailAdress: "",
   });
+  const navigate = useNavigate();
 
-  function handleChange(e) {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  }
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
-    console.log(formData);
-  }
 
+    const newApplications =
+      JSON.parse(localStorage.getItem("applications")) || [];
+    newApplications.push(formData);
+    localStorage.setItem("applications", JSON.stringify(newApplications));
+    navigate("/");
+  };
   return (
     <div className="formJobs">
       <form className="WorkWithUs" onSubmit={handleSubmit}>

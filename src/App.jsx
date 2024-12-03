@@ -43,14 +43,15 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/workWithUs" element={<WorkWithUs />} />
-          <Route path="/ApplicantsList" element={<ApplicantsList />} />
+          <Route path="/" element={<ApplicantsList />} />
           {/*pass on the filter function to the sidebar*/}
         </Routes>
-        <Navbar />
+
         <Sidebar onFilter={filterBooks} />
         <div className="main-content">
           {filteredBooks.map((book, id) => (
