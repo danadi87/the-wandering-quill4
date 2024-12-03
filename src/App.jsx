@@ -46,9 +46,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="*" element={<NotFound />} />
           <Route path="/workWithUs" element={<WorkWithUs />} />
-          <Route path="/" element={<ApplicantsList />} />
+          <Route path="/applicantsList" element={<ApplicantsList />} />
+          <Route path="*" element={<NotFound />} />
           {/*pass on the filter function to the sidebar*/}
         </Routes>
 

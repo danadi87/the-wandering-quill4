@@ -10,7 +10,7 @@ const ApplicantsList = () => {
     setApplications(updatedApplications);
     localStorage.setItem("applications", JSON.stringify(updatedApplications));
   };
-
+  console.log("hello");
   return (
     <div>
       <h2>Applications received</h2>
