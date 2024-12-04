@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
 import "./styles/App.css";
-
 import Sidebar from "./components/Sidebar.jsx";
 import { useNavigate, Routes, Route, BrowserRouter } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
@@ -73,34 +72,32 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        {/*pass on the filter function to the sidebar*/}
-        <Sidebar onFilter={filterBooks} onNavigate={handleNavigation} />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/workWithUs" element={<WorkWithUs />} />
-            <Route
-              path="/filtered"
-              element={
-                isFilteredView && filteredBooks.length > 0 ? (
-                  <FilteredBooks books={filteredBooks} />
-                ) : (
-                  <Homepage />
-                )
-              } //redirect to Homepage if no books
-            />
-            <Route path="/book/:title" element={<BookCard />} />
-            <Route path="/favorites" element={<FavouritesList />} />
-            <Route path="/shopping-cart" element={<ShoppingCart />} />
-            <Route path="/workWithUs" element={<WorkWithUs />} />
-            <Route path="/applicantsList" element={<ApplicantsList />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <Navbar />
+      {/*pass on the filter function to the sidebar*/}
+      <Sidebar onFilter={filterBooks} onNavigate={handleNavigation} />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+
+          <Route
+            path="/filtered"
+            element={
+              isFilteredView && filteredBooks.length > 0 ? (
+                <FilteredBooks books={filteredBooks} />
+              ) : (
+                <Homepage />
+              )
+            } //redirect to Homepage if no books
+          />
+          <Route path="/book/:title" element={<BookCard />} />
+          <Route path="/favorites" element={<FavouritesList />} />
+          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/workWithUs" element={<WorkWithUs />} />
+          <Route path="/applicantsList" element={<ApplicantsList />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
   );
 }
