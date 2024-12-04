@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const WorkWithUs = ({ onSubmit }) => {
+const RequestABook = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
+    title: "",
+    author: "",
+    type: "",
+    edition: "",
     name: "",
-    surname: "",
-    availability: "",
-    experience: "",
-    location: "",
     phoneNumber: "",
     emailAdress: "",
   });
@@ -20,30 +20,30 @@ const WorkWithUs = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newApplications =
-      JSON.parse(localStorage.getItem("applications")) || [];
-    newApplications.push(formData);
-    localStorage.setItem("applications", JSON.stringify(newApplications));
+    const newBooksRequested =
+      JSON.parse(localStorage.getItem("booksRequested")) || [];
+    newBooksRequested.push(formData);
+    localStorage.setItem("booksRequested", JSON.stringify(newBooksRequested));
     navigate("/");
   };
   return (
-    <div className="formJobs">
-      <form className="WorkWithUs" onSubmit={handleSubmit}>
+    <div className="formBooks">
+      <form className="requestAbook" onSubmit={handleSubmit}>
         <h2>Work with us</h2>
         <div className="form-fields">
-          {/* Name Field */}
+          {/* Title Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="title">Title</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
-                maxLength={55}
-                id="name"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
+                maxLength={255}
+                id="title"
+                name="title"
+                placeholder="Book title"
+                value={formData.title}
                 onChange={handleChange}
                 required
                 className="field"
@@ -51,19 +51,19 @@ const WorkWithUs = ({ onSubmit }) => {
             </div>
           </div>
 
-          {/* Surname Field */}
+          {/* Author Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="surname">Surname</label>
+              <label htmlFor="author">Author</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
                 maxLength={55}
-                id="surname"
-                name="surname"
-                placeholder="Surname"
-                value={formData.surname}
+                id="author"
+                name="author"
+                placeholder="Author"
+                value={formData.author}
                 onChange={handleChange}
                 required
                 className="field"
@@ -71,40 +71,40 @@ const WorkWithUs = ({ onSubmit }) => {
             </div>
           </div>
 
-          {/* Availability Field */}
+          {/* Type Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="availability">Availability</label>
+              <label htmlFor="availability">Type</label>
             </div>
             <div className="col-field">
               <select
-                id="availability"
-                name="availability"
-                value={formData.availability}
+                id="booktype"
+                name="type"
+                value={formData.type}
                 onChange={handleChange}
                 required
                 className="field"
               >
                 <option value="">----Please Select----</option>
-                <option value="Full Time">Full Time</option>
-                <option value="Part Time">Part Time</option>
+                <option value="Hard Cover">Hard Cover</option>
+                <option value="Pocket version">Pocket version</option>
               </select>
             </div>
           </div>
 
-          {/* Experience Field */}
+          {/* Edition Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="experience">Experience</label>
+              <label htmlFor="edition">Edition</label>
             </div>
             <div className="col-field">
               <input
-                type="text"
+                type="number"
                 maxLength={254}
-                id="experience"
-                name="experience"
-                placeholder="Experience"
-                value={formData.experience}
+                id="edition"
+                name="edition"
+                placeholder="Edition number"
+                value={formData.edition}
                 onChange={handleChange}
                 required
                 className="field"
@@ -112,19 +112,19 @@ const WorkWithUs = ({ onSubmit }) => {
             </div>
           </div>
 
-          {/* Location Field */}
+          {/* Name Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="location">Location</label>
+              <label htmlFor="location">Name</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
                 maxLength={254}
-                id="location"
-                name="location"
-                placeholder="Location"
-                value={formData.location}
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
                 onChange={handleChange}
                 required
                 className="field"
@@ -173,12 +173,12 @@ const WorkWithUs = ({ onSubmit }) => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="add-application-button">
-          Apply!
+        <button type="submit" className="add-RequestABook-button">
+          I want it!
         </button>
       </form>
     </div>
   );
 };
 
-export default WorkWithUs;
+export default RequestABook;

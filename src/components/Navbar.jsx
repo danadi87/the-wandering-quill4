@@ -15,7 +15,9 @@ const Navbar = () => {
     <div className="navbar">
       <img src={Logo} alt="The Wandering Quill" className="app-logo"></img>
       <Link to="/"> The Wandering Quill</Link>
-      <span>My account</span>
+      <Link to="/booksRequested">
+        <span>Books Requested</span>
+      </Link>
       {/*display the favorites count*/}
       <Link to="/favorites">
         My Favourites<span>({favorites.length})</span>{" "}
