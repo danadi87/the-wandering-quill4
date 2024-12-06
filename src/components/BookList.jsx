@@ -2,11 +2,19 @@ import { useState } from "react";
 import BooksList from "../assets/BooksList.json";
 import BookCard from "./BookCard.jsx";
 import FavouritesList from "./FavouritesList.jsx";
+import axios from "axios";
 
 const Booklist = () => {
-  const [books, setBooks] = useState([BooksList.json]);
+  const API_URL = "http://localhost:5005/";
+  const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
+  const getAllBooks = () => {
+    axios
+      .get(`${API_URL}/books`)
+      .then((response) => setBooks(response.data))
+      .catch((error) => console.log(error));
+  };
   //handle the favourite toggle
   const handleClickFavorite = (id) => {
     const updatedFavorites = favorites.includes(id)

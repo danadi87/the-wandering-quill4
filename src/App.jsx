@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import "./styles/App.css";
 import Sidebar from "./components/Sidebar.jsx";
-import { useNavigate, Routes, Route, BrowserRouter } from "react-router-dom";
+import { useNavigate, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -38,6 +38,7 @@ function App() {
   const handleNavigation = (path) => {
     //navigate to a new page
     if (path === "/") {
+      //reset filter view state
       setFilteredView(false);
       //persist state
       localStorage.setItem("isFilteredView", false);
@@ -47,13 +48,12 @@ function App() {
 
   //filter books by genre
   const filterBooks = (genre) => {
-    let filtered = [];
+    let filtered;
     //show all Books
     if (genre === "All") {
       filtered = BooksList;
     } else {
       filtered = BooksList.filter((book) => book.genre === genre);
-      setFilteredBooks(filtered);
     }
     setFilteredBooks(filtered);
     //enable filtered view
@@ -65,9 +65,14 @@ function App() {
     navigate("/filtered");
   };
   useEffect(() => {
-    //initialize books list
-    if (!filteredBooks.length) {
-      setFilteredBooks(BooksList);
+    //initialize books list from the localStorage
+    const storedFilteredBooks = JSON.parse(
+      localStorage.getItem("filteredBooks")
+    );
+    if (storedFilteredBooks && storedFilteredBooks.length) {
+      setFilteredBooks(storedFilteredBooks);
+    } else {
+      setFilteredBooks(BooksList); // Default to all books
     }
   }, []);
   return (
@@ -80,16 +85,10 @@ function App() {
           <Route path="/" element={<Homepage />} />
 
           <Route
-            path="/filtered"
-            element={
-              isFilteredView && filteredBooks.length > 0 ? (
-                <FilteredBooks books={filteredBooks} />
-              ) : (
-                <Homepage />
-              )
-            } //redirect to Homepage if no books
+            path="/filtered/:genre"
+            element={<FilteredBooks books={filteredBooks} />}
           />
-          <Route path="/book/:title" element={<BookCard />} />
+          <Route path="/book/:id" element={<BookCard />} />
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/requestABook" element={<RequestABook />} />

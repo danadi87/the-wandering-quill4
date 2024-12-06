@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
-//manages the shopping cart state and provides functions to interact with the cart
+//to manage the shopping cart state and provides functions to interact with the cart
 //create Context object to be able to share data globally and avoid passing props
 const ShoppingCartContext = createContext();
 
@@ -19,6 +19,12 @@ export const ShoppingCartProviderWrapper = ({ children }) => {
   const removeCart = (bookId) => {
     setCart((prevCart) => prevCart.filter((book) => book.id !== bookId));
   };
+  useEffect(() => {
+    fetch("http://localhost:3001/cart")
+      .then((response) => response.json())
+      .then((data) => setCart(data))
+      .catch((error) => console.error("Error fetching cart:", error));
+  }, []);
   return (
     <ShoppingCartContext.Provider value={{ cart, addToCart, removeCart }}>
       {children}

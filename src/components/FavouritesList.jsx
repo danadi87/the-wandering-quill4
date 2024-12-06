@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
+import { useState, useEffect } from "react";
 
 const FavouritesList = () => {
-  const { favorites, removeFavorite } = useContext(FavoritesContext);
+  const { favorites, removeFavorite, addToFavorites } = useContext(FavoritesContext);
   const { addToCart, isInCart } = useContext(ShoppingCartContext);
+
+
   return (
     <div className="favorites">
       <h2>My Favorites</h2>

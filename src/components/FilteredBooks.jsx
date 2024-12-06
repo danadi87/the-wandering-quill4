@@ -4,11 +4,13 @@ import "../styles/FilteredBooks.css";
 import "/heart.png";
 import "/cart.png";
 import "/delete.png";
-import BookCard from "./BookCard.jsx";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
+import axios from "axios";
 
 const FilteredBooks = ({ books }) => {
+  const URL = "http://localhost:5005";
+
   const navigate = useNavigate();
   //define the selected book state
   const [selectedBook, setSelectedBook] = useState(null);
@@ -29,12 +31,27 @@ const FilteredBooks = ({ books }) => {
   };
   const handleClickFavorite = (id) => {
     console.log(`Favorite clicked for book ID: ${id}`);
-    // Add favorite logic here
+    axios
+      .post(`${URL}/favorites`)
+      .then((response) => setSelectedBook(response.data))
+      .catch((error) => console.log(error));
   };
   const handleClickCart = (id) => {
     console.log(`Add to cart clicked for book ID: ${id}`);
-    // Add cart logic here
+    axios
+      .post(`${URL}/cart`)
+      .then((response) => setSelectedBook(response.data))
+      .catch((error) => console.log(error));
   };
+
+  // Filter books based on genre
+  const filteredBooks = books.filter((book) =>
+    genre === "All" ? true : book.genre === genre
+  );
+
+  if (filteredBooks.length === 0) {
+    return <p>No books found for this genre.</p>;
+  }
 
   if (selectedBook) {
     //if a book is selected, render the BookCard component

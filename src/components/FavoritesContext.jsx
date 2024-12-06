@@ -20,6 +20,12 @@ export const FavoritesProviderWrapper = ({ children }) => {
       prevFavorites.filter((book) => book.id !== bookId)
     );
   };
+  useEffect(() => {
+    fetch("http://localhost:3001/favorites")
+      .then((response) => response.json())
+      .then((data) => setFavorites(data))
+      .catch((error) => console.error("Error fetching favorites:", error));
+  }, []);
 
   return (
     <FavoritesContext.Provider

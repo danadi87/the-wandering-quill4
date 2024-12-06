@@ -5,9 +5,11 @@
     "author": "Jane Austen",
     "genre": "Romance",
     "description": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work <her own darling child> and its vivacious heroine, Elizabeth Bennet, <as delightful a creature as ever appeared in print.> The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen’s radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+    "short-description": "The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring",
     "pages": "279",
     "cover_image": "/PrideandPrejudice.png",
-    "publish_year": "1813"
+    "publish_year": "1813",
+    "price": "25"
   },
   {
     "id": "2",
@@ -15,9 +17,11 @@
     "author": "Erin Morgenstern",
     "genre": "Romance",
     "description": "The circus arrives without warning. No announcements precede it. It is simply there, when yesterday it was not. Within the black-and-white striped canvas tents is an utterly unique experience full of breathtaking amazements. It is called Le Cirque des Rêves, and it is only open at night. But behind the scenes, a fierce competition is underway—a duel between two young magicians, Celia and Marco, who have been trained since childhood expressly for this purpose by their mercurial instructors. Unbeknownst to them, this is a game in which only one can be left standing, and the circus is but the stage for a remarkable battle of imagination and will. Despite themselves, however, Celia and Marco tumble headfirst into love—a deep, magical love that makes the lights flicker and the room grow warm whenever they so much as brush hands.True love or not, the game must play out, and the fates of everyone involved, from the cast of extraordinary circus performers to the patrons, hang in the balance, suspended as precariously as the daring acrobats overhead. Written in rich, seductive prose, this spell-casting novel is a feast for the senses and the heart.",
+    "short-description": "Within the black-and-white striped canvas tents is an utterly unique experience full of breathtaking amazements.",
     "pages": "506",
     "cover_image": "/NightCirus.png",
-    "publish_year": "2011"
+    "publish_year": "2011",
+    "price": "20"
   },
   {
     "id": "3",
@@ -25,9 +29,11 @@
     "author": "Marjane Satrapi",
     "genre": "Graphic Novel",
     "description": "Persepolis is the story of Satrapi’s unforgettable childhood and coming of age within a large and loving family in Tehran during the Islamic Revolution; of the contradictions between private and public life in a country plagued by political upheaval; of her high school years in Vienna facing the trials of adolescence far from her family; of her homecoming—both sweet and terrible; and, finally, of her self-imposed exile from her beloved homeland. It is the chronicle of a girlhood and adolescence at once outrageous and familiar, a young life entwined with the history of her country yet filled with the universal trials and joys of growing up. Edgy, searingly observant, and candid, often heartbreaking but threaded throughout with raw humor and hard-earned wisdom—Persepolis is a stunning work from one of the most highly regarded, singularly talented graphic artists at work today.",
+    "short-description": "Persepolis is the story of Satrapi’s unforgettable childhood and coming of age within a large and loving family in Tehran during the Islamic Revolution",
     "pages": "341",
     "cover_image": "/persepolis.png",
-    "publish_year": "2007"
+    "publish_year": "2007",
+    "price": "35"
   },
   {
     "id": "4",
@@ -35,9 +41,11 @@
     "author": "Lily Anderson",
     "genre": "Fiction",
     "description": "Red Solo cups? Check. Snacks? Check. Abandoned mansion full of countless horrors that won’t let you leave? Check. The Deinhart Manor has been a looming shadow over town for as long as anyone can remember, and it’s been abandoned for even longer. When the final Deinhart descendent passes, the huge gothic manor is up for sale for the first time ever. Which means Arden can steal the keys from her mom’s real estate office...It’s time for a graduation party that no one will ever forget. Arden and her best friends each have different reasons for wanting to throw the party to end all parties. But when the manor doors bar everyone inside and the walls begin to bleed, all anyone wants to do is make it out alive.",
+    "short-description": "Abandoned mansion full of countless horrors that won’t let you leave? Check",
     "pages": "304",
     "cover_image": "/KillerHouseParty.png",
-    "publish_year": "2024"
+    "publish_year": "2024",
+    "price": "15"
   },
   {
     "id": "5",
@@ -45,9 +53,11 @@
     "author": "Ann Treneman",
     "genre": "Science and Nature",
     "description": "From forgotten folklore to famous gardeners, and from incredible edibles to poisonous plants, this compendium of curiosities celebrates the diverse wonders of horticulture and botany. Beautifully illustrated with botanical diagrams and graphics, this miscellany will inform and delight gardeners and plant lovers. A ‘pick and mix’ of horticultural knowledge, it ranges from local to global, filled with maps, historical biographies, scientific explorations, plant profiles, fun and unbelievable facts, recipes and tips.",
+    "short-description": "From forgotten folklore to famous gardeners, and from incredible edibles to poisonous plants, this compendium of curiosities celebrates the diverse wonders of horticulture and botany",
     "pages": "224",
     "cover_image": "",
-    "publish_year": "2024"
+    "publish_year": "2024",
+    "price": "38"
   },
   {
     "id": "6",
@@ -55,9 +65,11 @@
     "author": "Franz Kafka",
     "genre": "Fiction",
     "description": "One morning, ordinary salesman Gregor Samsa wakes up to find himself transformed into a giant cockroach. Metamorphosis, Kafka's masterpiece of unease and black humour, is one of the twentieth century's most influential works of fiction, and is accompanied here by two more classic stories.",
+    "short-description": "One morning, ordinary salesman Gregor Samsa wakes up to find himself transformed into a giant cockroach",
     "pages": "144",
     "cover_image": "/Metamorphosis.png",
-    "publish_year": "1975"
+    "publish_year": "1975",
+    "price": "25"
   },
   {
     "id": "7",
@@ -65,9 +77,11 @@
     "author": "Michael Ende",
     "genre": "Fiction",
     "description": "Bastian is nobody's idea of a hero, least of all his own. Through the pages of an old book he discovers a mysterious magical world - a world of dragons, monsters, witches and GIANTS! A world that is doomed unless a human can save it...Can Bastian succeed in battling terrible foes and find the strength he needs to give the Empress a new name?",
+    "short-description": "A world that is doomed unless a human can save it...",
     "pages": "528",
     "cover_image": "/TheNeverEndingStory.png",
-    "publish_year": "1979"
+    "publish_year": "1979",
+    "price": "12"
   },
   {
     "id": "8",
@@ -75,9 +89,11 @@
     "author": "Asako Yuzuki",
     "genre": "Fiction",
     "description": "Gourmet cook Manako Kajii sits in Tokyo Detention Centre convicted of the serial murders of lonely businessmen, who she is said to have seduced with her delicious home cooking. The case has captured the nation's imagination but Kajii refuses to speak with the press, entertaining no visitors. That is, until journalist Rika Machida writes a letter asking for her recipe for beef stew and Kajii can't resist writing back. Rika, the only woman in her news office, works late each night, rarely cooking more than ramen. As the visits unfold between her and the steely Kajii, they are closer to a masterclass in food than journalistic research. Rika hopes this gastronomic exchange will help her soften Kajii but it seems that she might be the one changing. With each meal she eats, something is awakening in her body, might she and Kaji have more in common than she once thought? Inspired by the real case of the convicted con woman and serial killer, <The Konkatsu Killer>, Asako Yuzuki's Butter is a vivid, unsettling exploration of misogyny, obsession, romance and the transgressive pleasures of food in Japan.",
+    "short-description": "Asako Yuzuki's Butter is a vivid, unsettling exploration of misogyny, obsession, romance and the transgressive pleasures of food in Japan",
     "pages": "464",
     "cover_image": "/Butter.png",
-    "publish_year": "2024"
+    "publish_year": "2024",
+    "price": "65"
   },
   {
     "id": "9",
@@ -85,9 +101,11 @@
     "author": "Anthony Burgess",
     "genre": "Fiction",
     "description": "Fifteen-year-old Alex doesn't just like ultra-violence - he also enjoys rape, drugs and Beethoven's ninth. He and his gang of droogs rampage through a dystopian future, hunting for terrible thrills. But when Alex finds himself at the mercy of the state and subject to the ministrations of Dr Brodsky, and the mind-altering treatment of the Ludovico Technique, he discovers that fun is no longer the order of the day. The basis for Stanley Kubrick's notorious 1971 film, A Clockwork Orange is both a virtuoso performance from an electrifying prose stylist and a serious exploration of the morality of free will.",
+    "short-description": "Fifteen-year-old Alex doesn't just like ultra-violence - he also enjoys rape, drugs and Beethoven's ninth. ",
     "pages": "176",
     "cover_image": "/ClockworkOrange.png",
-    "publish_year": "2020"
+    "publish_year": "2020",
+    "price": "20"
   },
   {
     "id": "10",
@@ -95,9 +113,11 @@
     "author": "Ismail Kadare",
     "genre": "Fiction",
     "description": "28 June 1389, the Field of the Blackbirds. A Christian army made up of Serbs, Bosnians, Albanians and Romanians confront an Ottoman army. In ten hours the battle is over, and the Muslims possess the field; an outcome that has haunted the vanquished ever since. 28 June 1989, the Serb Leader Slobodan Milosevic launches his campaign for a fresh massacre of the Albanians, the majority population of Kosovo. In three short narratives Kadare shows how legends of betrayal and defeat simmered in European civilisation for six hundred years, culminating in the agony of one tiny population at the end of the twentieth century.",
+    "short-description": "A Christian army made up of Serbs, Bosnians, Albanians and Romanians confront an Ottoman army",
     "pages": "96",
     "cover_image": "/3ElegiesKosovo.png",
-    "publish_year": "2011"
+    "publish_year": "2011",
+    "price": "45"
   },
   {
     "id": "11",
@@ -105,9 +125,11 @@
     "author": "George Orwell",
     "genre": "dystopian",
     "description": "A masterpiece of rebellion and imprisonment where war is peace freedom is slavery and Big Brother is watching. Thought Police, Big Brother, Orwellian - these words have entered our vocabulary because of George Orwell's classic dystopian novel 1984. The story of one man's Nightmare Odyssey as he pursues a forbidden love affair through a world ruled by warring states and a power structure that controls not only information but also individual thought and memory 1984 is a prophetic haunting tale More relevant than ever before 1984 exposes the worst crimes imaginable the destruction of truth freedom and individuality. With a foreword by Thomas Pynchon. This beautiful paperback edition features deckled edges and french flaps a perfect gift for any occasion ",
+    "short-description": "A masterpiece of rebellion and imprisonment where war is peace freedom is slavery and Big Brother is watching",
     "pages": "368",
     "cover_image": "https://www.theoriginalunderground.com/products/1984-george-orwell-cover-print",
-    "publish_year": "1949"
+    "publish_year": "1949",
+    "price": "11"
   },
   {
     "id": "12",
@@ -115,9 +137,11 @@
     "author": "Kate Morton",
     "genre": "Historical fiction",
     "description": "Adelaide Hills, Christmas Eve, 1959: At the end of a scorching hot day, beside a creek on the grounds of the grand and mysterious mansion, a local delivery man makes a terrible discovery. A police investigation is called and the small town of Tambilla becomes embroiled in one of the most shocking and perplexing murder cases in the history of South Australia. Sixty years later, Jess is a journalist in search of a story. Having lived and worked in London for almost twenty years, she now finds herself laid off from her full-time job and struggling to make ends meet. A phone call out of nowhere summons her back to Sydney, where her beloved grandmother, Nora, who raised Jess when her mother could not, has suffered a fall and been raced to the hospital. Nora has always been a vibrant and strong presence: decisive, encouraging, young despite her years. When Jess visits her in the hospital, she is alarmed to find her grandmother frail and confused. It’s even more alarming to hear from Nora's housekeeper that Nora had been distracted in the weeks before her accident and had fallen on the steps to the attic—the one place Jess was forbidden from playing in when she was small. At loose ends in Nora's house, Jess does some digging of her own. In Nora's bedroom, she discovers a true crime book, chronicling the police investigation into a long-buried tragedy: the Turner Family Tragedy of Christmas Eve, 1959. It is only when Jess skims through the book that she finds a shocking connection between her own family and this once-infamous crime—a crime that has never been resolved satisfactorily. And for a journalist without a story, a cold case might be the best distraction she can find…An epic novel that spans generations, Homecoming asks what we would do for those we love, and how we protect the lies we tell. It explores the power of motherhood, the corrosive effects of tightly held secrets, and the healing nature of truth. Above all, it is a beguiling and immensely satisfying novel from one of the finest writers working today.",
+    "short-description": "A beguiling and immensely satisfying novel from one of the finest writers working today",
     "pages": "547",
     "cover_image": "https://www.harpercollins.com/products/homecoming-kate-morton?variant=41106358566946#images",
-    "publish_year": "2023"
+    "publish_year": "2023",
+    "price": "23"
   },
   {
     "id": "13",
@@ -125,9 +149,11 @@
     "author": "Julie Clark",
     "genre": "Thriller",
     "description": "Claire Cook has a perfect life. Married to the scion of a political dynasty, with a Manhattan townhouse and a staff of ten, her surroundings are elegant, her days flawlessly choreographed, and her future auspicious. But behind closed doors, nothing is quite as it seems. That perfect husband has a temper that burns as bright as his promising political career, and he's not above using his staff to track Claire's every move, making sure she's living up to his impossible standards. But what he doesn't know is that Claire has worked for months on a plan to vanish. A chance meeting in an airport bar brings her together with a woman whose circumstances seem equally dire. Together they make a last-minute decision to switch tickets — Claire taking Eva's flight to Oakland, and Eva traveling to Puerto Rico as Claire. They believe the swap will give each of them the head start they need to begin again somewhere far away. But when the flight to Puerto Rico goes down, Claire realizes it's no longer a head start but a new life. Cut off, out of options, with the news of her death about to explode in the media, Claire will assume Eva's identity, and along with it, the secrets Eva fought so hard to keep hidden. The Last Flight is the story of two women — both alone, both scared — and one agonizing decision that will change the trajectory of both of their lives.",
+    "short-description": "The story of two women — both alone, both scared — and one agonizing decision that will change the trajectory of both of their lives",
     "pages": "320",
     "cover_image": "",
-    "publish_year": "2020"
+    "publish_year": "2020",
+    "price": "25"
   },
   {
     "id": "14",
@@ -135,9 +161,11 @@
     "author": "Fredrik Backman",
     "genre": "Fiction",
     "description": "Britt-Marie cannot stand mess. A disorganized cutlery drawer ranks high on her list of unforgivable sins. She is not one to judge others—no matter how ill-mannered, unkempt, or morally suspect they might be. It’s just that sometimes people interpret her helpful suggestions as criticisms, which is certainly not her intention. But hidden inside the socially awkward, fussy busybody is a woman who has more imagination, bigger dreams, and a warmer heart that anyone around her realizes. When Britt-Marie walks out on her cheating husband and has to fend for herself in the miserable backwater town of Borg—of which the kindest thing one can say is that it has a road going through it—she finds work as the caretaker of a soon-to-be demolished recreation center. The fastidious Britt-Marie soon finds herself being drawn into the daily doings of her fellow citizens, an odd assortment of miscreants, drunkards, layabouts. Most alarming of all, she’s given the impossible task of leading the supremely untalented children’s soccer team to victory. In this small town of misfits, can Britt-Marie find a place where she truly belongs?",
+    "short-description": "",
     "pages": "324",
-    "cover_image": "",
-    "publish_year": "2014"
+    "cover_image": "In this small town of misfits, can Britt-Marie find a place where she truly belongs?",
+    "publish_year": "2014",
+    "price": "18"
   },
   {
     "id": "15",
@@ -145,9 +173,11 @@
     "author": "Rashid Khalidi",
     "genre": "History",
     "description": "A landmark history of one hundred years of war waged against the Palestinians from the foremost US historian of the Middle East, told through pivotal events and family history. In 1899, Yusuf Diya al-Khalidi, mayor of Jerusalem, alarmed by the Zionist call to create a Jewish national home in Palestine, wrote a letter aimed at Theodore Herzl: the country had an indigenous people who would not easily accept their own displacement. He warned of the perils ahead, ending his note, <in the name of God, let Palestine be left alone>. Thus Rashid Khalidi, al-Khalidi’s great-great-nephew, begins this sweeping history, the first general account of the conflict told from an explicitly Palestinian perspective. Drawing on a wealth of untapped archival materials and the reports of generations of family members—mayors, judges, scholars, diplomats, and journalists—The Hundred Years' War on Palestine upends accepted interpretations of the conflict, which tend, at best, to describe a tragic clash between two peoples with claims to the same territory. Instead, Khalidi traces a hundred years of colonial war on the Palestinians, waged first by the Zionist movement and then Israel, but backed by Britain and the United States, the great powers of the age. He highlights the key episodes in this colonial campaign, from the 1917 Balfour Declaration to the destruction of Palestine in 1948, from Israel’s 1982 invasion of Lebanon to the endless and futile peace process. Original, authoritative, and important, The Hundred Years' War on Palestine is not a chronicle of victimization, nor does it whitewash the mistakes of Palestinian leaders or deny the emergence of national movements on both sides. In reevaluating the forces arrayed against the Palestinians, it offers an illuminating new view of a conflict that continues to this day.",
+    "short-description": "A landmark history of one hundred years of war waged against the Palestinians from the foremost US historian of the Middle East",
     "pages": "336",
     "cover_image": "",
-    "publish_year": ""
+    "publish_year": "",
+    "price": "45"
   },
   {
     "id": "16",
@@ -155,9 +185,11 @@
     "author": "Matthew D. Lieberman",
     "genre": "Psychology",
     "description": "Why are we influenced by the behaviour of complete strangers? Why does the brain register similar pleasure when I perceive something as 'fair' or when I eat chocolate? Why can we be so profoundly hurt by bereavement? What are the evolutionary benefits of these traits? The young discipline of 'social cognitive neuroscience' has been exploring this fascinating interface between brain science and human behaviour since the late 1990s. Now one of its founding pioneers, Matthew D. Lieberman, presents the discoveries that he and fellow researchers have made. Using fMRI scanning and a range of other techniques, they have been able to see that the brain responds to social pain and pleasure the same way as physical pain and pleasure; and that unbeknown to ourselves, we are constantly 'mindreading' other people so that we can fit in with them. It is clear that our brains are designed respond to and be influenced by others. For good evolutionary reasons, he argues, we are wired to be social. The implications are numerous and profound. Do we have to rethink what we understand by identity, and free will? How can managers improve the way their teams relate and perform? Could we organize large social institutions in ways that would work far better? And could there be whole new methods of education?",
+    "short-description": "Why are we influenced by the behaviour of complete strangers? ",
     "pages": "384",
     "cover_image": "",
-    "publish_year": "2013"
+    "publish_year": "2013",
+    "price": "65"
   },
   {
     "id": "17",
@@ -165,9 +197,11 @@
     "author": "J.B. MacKinnon",
     "genre": "Nonfiction",
     "description": "Consuming less is our best strategy for saving the planet—but can we do it? In this thoughtful and surprisingly optimistic book, journalist J. B. MacKinnon investigates how we may achieve a world without shopping. We can’t stop shopping. And yet we must. This is the consumer dilemma. The economy says we must always consume even the slightest drop in spending leads to widespread unemployment, bankruptcy, and home foreclosure. The planet says we consume too much: in America, we burn the earth’s resources at a rate five times faster than it can regenerate. And despite efforts to “green” our consumption—by recycling, increasing energy efficiency, or using solar power—we have yet to see a decline in global carbon emissions. Addressing this paradox head-on, acclaimed journalist J. B. MacKinnon asks, What would really happen if we simply stopped shopping?  Is there a way to reduce our consumption to earth-saving levels without triggering economic collapse? At first this question took him around the world, seeking answers from America’s big-box stores to the hunter-gatherer cultures of Namibia to communities in Ecuador that consume at an exactly sustainable rate. Then the thought experiment came shockingly the coronavirus brought shopping to a halt, and MacKinnon’s ideas were tested in real time. Drawing from experts in fields ranging from climate change to economics, MacKinnon investigates how living with less would change our planet, our society, and ourselves. Along the way, he reveals just how much we stand to An investment in our physical and emotional wellness. The pleasure of caring for our possessions. Closer relationships with our natural world and one another. Imaginative and inspiring, The Day the World Stops Shopping will embolden you to envision another way.",
+    "short-description": "Consuming less is our best strategy for saving the planet—but can we do it? ",
     "pages": "336",
     "cover_image": "",
-    "publish_year": "2021"
+    "publish_year": "2021",
+    "price": "50"
   },
   {
     "id": "18",
@@ -175,9 +209,11 @@
     "author": "Phil Knight",
     "genre": "Business",
     "description": "In this candid and riveting memoir, for the first time ever, Nike founder and CEO Phil Knight shares the inside story of the company’s early days as an intrepid start-up and its evolution into one of the world’s most iconic, game-changing, and profitable brands. In 1962, fresh out of business school, Phil Knight borrowed $50 from his father and created a company with a simple mission: import high-quality, low-cost athletic shoes from Japan. Selling the shoes from the trunk of his lime green Plymouth Valiant, Knight grossed $8,000 his first year. Today, Nike’s annual sales top $30 billion. In an age of startups, Nike is the ne plus ultra of all startups, and the swoosh has become a revolutionary, globe-spanning icon, one of the most ubiquitous and recognizable symbols in the world today. But Knight, the man behind the swoosh, has always remained a mystery. Now, for the first time, in a memoir that is candid, humble, gutsy, and wry, he tells his story, beginning with his crossroads moment. At 24, after backpacking around the world, he decided to take the unconventional path, to start his own business—a business that would be dynamic, different. Knight details the many risks and daunting setbacks that stood between him and his dream—along with his early triumphs. Above all, he recalls the formative relationships with his first partners and employees, a ragtag group of misfits and seekers who became a tight-knit band of brothers. Together, harnessing the transcendent power of a shared mission, and a deep belief in the spirit of sport, they built a brand that changed everything.",
+    "short-description": "In this candid and riveting memoir, for the first time ever, Nike founder and CEO Phil Knight shares the inside story of the company’s early days as an intrepid start-up ",
     "pages": "400",
     "cover_image": "",
-    "publish_year": "2016"
+    "publish_year": "2016",
+    "price": "35"
   },
   {
     "id": "19",
@@ -185,9 +221,11 @@
     "author": "Jessica Valenti",
     "genre": "Feminism",
     "description": "Author and Guardian US columnist Jessica Valenti has been leading the national conversation on gender and politics for over a decade. Now, in a darkly funny and bracing memoir, Valenti explores the toll that sexism takes from the every day to the existential. Sex Object explores the painful, funny, embarrassing, and sometimes illegal moments that shaped Valenti’s adolescence and young adulthood in New York City, revealing a much shakier inner life than the confident persona she has cultivated as one of the most recognizable feminists of her generation. In the tradition of writers like Joan Didion and Mary Karr, this literary memoir is sure to shock those already familiar with Valenti’s work and enthrall those who are just finding it.",
+    "short-description": "",
     "pages": "205",
-    "cover_image": "",
-    "publish_year": "2016"
+    "cover_image": "Valenti explores the toll that sexism takes from the every day to the existential.",
+    "publish_year": "2016",
+    "price": "19"
   },
   {
     "id": "20",
@@ -195,8 +233,10 @@
     "author": "Lecrae Moore",
     "genre": "Biography",
     "description": "Two-time Grammy winning rap artist, Lecrae, learned this lesson through more than his share of adversity—childhood abuse, drugs and alcoholism, a stint in rehab, an abortion, and an unsuccessful suicide attempt. Along the way, Lecrae attained an unwavering faith in Jesus and began looking to God for affirmation. Now as a chart-topping industry anomaly, he has learned to ignore the haters and make peace with his craft. The rap artist holds nothing back as he divulges the most sensitive details of his life, answers his critics, shares intimate handwritten journal entries, and powerfully models how to be a Christian in a secular age. This is the story of one man's journey to faith and freedom.",
+    "short-description": "This is the story of one man's journey to faith and freedom",
     "pages": "256",
     "cover_image": "",
-    "publish_year": "2016"
+    "publish_year": "2016",
+    "price": "21"
   }
 ]

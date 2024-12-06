@@ -15,7 +15,7 @@ const BookCard = () => {
     return (
       <div>
         <h2>Book not found</h2>
-        <p>No details available for "{title}</p>
+        <p>No details available for {title}</p>
       </div>
     );
   }
@@ -40,10 +40,6 @@ const BookCard = () => {
         </div>
         <h2>{book.title}</h2>
         <h4>{book.author}</h4>
-        <p>{book.genre}</p>
-        <p>{book.description}</p>
-        <p>{book.pages} pages</p>
-        <p>{book.publish_year}</p>
       </div>
     </div>
   );

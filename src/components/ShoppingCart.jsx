@@ -3,7 +3,8 @@ import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
 //page to display books in the cart
 const ShoppingCart = () => {
-  const { cart } = useContext(ShoppingCartContext);
+  const { cart, removeFromCart } = useContext(ShoppingCartContext);
+
   return (
     <div className="cart">
       <h2>Shopping cart</h2>
@@ -16,10 +17,8 @@ const ShoppingCart = () => {
               <img src={book.cover_image} alt={book.title} />
               <h2>{book.title}</h2>
               <h4>{book.author}</h4>
-              <p>{book.genre}</p>
-              <p>{book.description}</p>
-              <p>{book.pages}</p>
-              <p>{book.publish_year}</p>
+              <p>{book.price}</p>
+              <button onClick={() => removeFromCart(book.id)}>Remove</button>
             </div>;
           })}
         </div>
