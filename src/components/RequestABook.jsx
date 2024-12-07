@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const RequestABook = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -12,20 +13,25 @@ const RequestABook = ({ onSubmit }) => {
     emailAdress: "",
   });
   const navigate = useNavigate();
+  const API_URL = "http://localhost:5005";
+  useEffect(() => {
+    bookRequested();
+  }, []);
 
+  const bookRequested = () => {
+    axios
+      .post(`${API_URL}/requested`)
+      .then((response) => setBooks(response.data))
+      .catch((error) => console.log(error));
+  };
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newBooksRequested =
-      JSON.parse(localStorage.getItem("booksRequested")) || [];
-    newBooksRequested.push(formData);
-    localStorage.setItem("booksRequested", JSON.stringify(newBooksRequested));
-    navigate("/");
   };
+
   return (
     <div className="formBooks">
       <form className="requestAbook" onSubmit={handleSubmit}>

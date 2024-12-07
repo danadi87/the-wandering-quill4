@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
-import { useState, useEffect } from "react";
+
 
 const FavouritesList = () => {
   const { favorites, removeFavorite, addToFavorites } = useContext(FavoritesContext);

@@ -9,12 +9,12 @@ import Footer from "./components/Footer.jsx";
 import RequestABook from "./components/RequestABook.jsx";
 import FilteredBooks from "./components/FilteredBooks.jsx";
 import BooksList from "./assets/BooksList.json";
-import BookCard from "./components/BookCard.jsx";
 import FavouritesList from "./components/FavouritesList.jsx";
 import ShoppingCart from "./components/ShoppingCart.jsx";
 import FavoritesContext from "./components/FavoritesContext.jsx";
 import ShoppingCartContext from "./components/ShoppingCartContext.jsx";
 import BooksRequested from "./components/BooksRequested.jsx";
+import BookDetails from "./components/BookDetails.jsx";
 
 function App() {
   // Access favorites context
@@ -88,7 +88,7 @@ function App() {
             path="/filtered/:genre"
             element={<FilteredBooks books={filteredBooks} />}
           />
-          <Route path="/book/:id" element={<BookCard />} />
+          <Route path="/book/:id" element={<BookDetails />} />
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/requestABook" element={<RequestABook />} />

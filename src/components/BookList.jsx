@@ -1,13 +1,17 @@
-import { useState } from "react";
-import BooksList from "../assets/BooksList.json";
+import { useState, useEffect } from "react";
 import BookCard from "./BookCard.jsx";
 import FavouritesList from "./FavouritesList.jsx";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Booklist = () => {
-  const API_URL = "http://localhost:5005/";
+  const API_URL = "http://localhost:5005";
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    getAllBooks();
+  }, []);
 
   const getAllBooks = () => {
     axios
@@ -15,34 +19,23 @@ const Booklist = () => {
       .then((response) => setBooks(response.data))
       .catch((error) => console.log(error));
   };
-  //handle the favourite toggle
-  const handleClickFavorite = (id) => {
-    const updatedFavorites = favorites.includes(id)
-      ? favorites.filter((favId) => favId !== id)
-      : [...favorites, id];
-    setFavorites(updatedFavorites);
-  };
-
-  //handle the cart toggle
-  const handleClickCart = (id) => {
-    const updatedCart = books.includes(id)
-      ? books.filter((cartId) => cartId !== id)
-      : [...books, id];
-    setBooks(updatedCart);
-  };
   function deleteBook(id) {
     console.log(`Deleting book with is ${id}`);
     //filter out the books with the specified id from the BooksList array
-    const filteredBooks = books.filter((book) => book.is !== id);
+    const filteredBooks = books.filter((book) => book.id !== id);
     //update the state with the new filtered array
     setBooks(filteredBooks);
   }
   function addToFavorites(id) {
     console.log(`Adding book with id ${id} to favorites`);
-    //filter out the list with the specified  id from the books array
+    setFavorites((currentFavorites) =>
+      currentFavorites.includes(id)
+        ? currentFavorites.filter((favId) => favId !== id)
+        : [...currentFavorites, id]
+    );
     let favoriteList;
 
-    const filteredList = BooksList.filter((book) => {
+    const filteredList = getAllBooks.filter((book) => {
       //store the id in the favoriteList
       if (book.id === id) {
         favoriteList = book;
@@ -60,12 +53,13 @@ const Booklist = () => {
       <div className="list">
         {books &&
           books.map((book) => (
-            <BookCard
-              key={book.id}
-              book={book}
-              deleteBook={deleteBook}
-              addToFavorites={addToFavorites}
-            />
+            <Link to={`/book/${book.id}`} key={book.id}>
+              <BookCard
+                book={book}
+                deleteBook={deleteBook}
+                addToFavorites={addToFavorites}
+              />
+            </Link>
           ))}
       </div>
       <FavouritesList favorites={favorites} />

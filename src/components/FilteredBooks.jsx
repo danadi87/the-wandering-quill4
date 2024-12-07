@@ -9,12 +9,12 @@ import ShoppingCartContext from "./ShoppingCartContext.jsx";
 import axios from "axios";
 
 const FilteredBooks = ({ books }) => {
-  const URL = "http://localhost:5005";
+  const API_URL = "http://localhost:5005/";
 
   const navigate = useNavigate();
   //define the selected book state
   const [selectedBook, setSelectedBook] = useState(null);
-  const { addFavorite } = useContext(FavoritesContext);
+  const { addFavorite, removeFavorite } = useContext(FavoritesContext);
   const { addToCart } = useContext(ShoppingCartContext);
 
   //set the clicked book as selected
@@ -31,17 +31,15 @@ const FilteredBooks = ({ books }) => {
   };
   const handleClickFavorite = (id) => {
     console.log(`Favorite clicked for book ID: ${id}`);
-    axios
-      .post(`${URL}/favorites`)
-      .then((response) => setSelectedBook(response.data))
-      .catch((error) => console.log(error));
+    useEffect(() => {
+      addFavorite, removeFavorite;
+    }, []);
   };
   const handleClickCart = (id) => {
     console.log(`Add to cart clicked for book ID: ${id}`);
-    axios
-      .post(`${URL}/cart`)
-      .then((response) => setSelectedBook(response.data))
-      .catch((error) => console.log(error));
+    useEffect(() => {
+      addToCart, removeCart;
+    }, []);
   };
 
   // Filter books based on genre
@@ -83,8 +81,7 @@ const FilteredBooks = ({ books }) => {
               type="button"
               className="favourite"
               onClick={(e) => {
-                e.stopPropagation();
-                addFavorite(book);
+                handleClickFavorite;
               }}
             >
               <img src="/heart.png" className="heart" />
@@ -93,8 +90,7 @@ const FilteredBooks = ({ books }) => {
               type="button"
               className="/cart.png"
               onClick={(e) => {
-                e.stopPropagation();
-                addToCart(book);
+                handleClickCart;
               }}
             >
               {" "}
@@ -107,6 +103,7 @@ const FilteredBooks = ({ books }) => {
           <p>{book.description}</p>
           <p>{book.pages}</p>
           <p>{book.publish_year}</p>
+          <p>{book.price}€</p>
         </div>
       ))}
     </div>
