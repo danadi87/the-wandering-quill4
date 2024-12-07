@@ -62,7 +62,6 @@ const Booklist = () => {
             </Link>
           ))}
       </div>
-      <FavouritesList favorites={favorites} />
     </div>
   );
 };

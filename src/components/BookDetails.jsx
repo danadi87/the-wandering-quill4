@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import heartIcon from "/heart.png";
 import cartIcon from "/cart.png";
 import { API_URL } from "../config/apiConfig";
+import RequestABook from "./RequestABook";
 
 const BookDetails = () => {
   const [book, setBook] = useState([]);
@@ -21,6 +22,21 @@ const BookDetails = () => {
       .then((response) => setBook(response.data))
       .catch((error) => console.log(error));
   };
+  const updateBook = (book) => {
+    axios
+      .put(`${API_URL}/books/${id}`, {
+        title: "",
+        author: "",
+        genre: "",
+        description: "",
+        pages: "",
+        cover_image: "",
+        publish_year: "",
+        price: "",
+      })
+      .then((response) => setBook(response.data))
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <img src={book.cover_image} alt={book.title} />
@@ -28,17 +44,24 @@ const BookDetails = () => {
       <div className="buttons">
         <button
           className="favourite"
-          onClick={() => console.log("Favorite clicked")}
+         
         >
           <img src={heartIcon} className="heart" alt="favorite" />
         </button>
         <button
           className={cartIcon}
-          onClick={() => console.log("Add to cart clicked")}
+          onClick={() => {
+            updateBook(book.id);
+            console.log("Add to cart clicked");
+          }}
         >
           {" "}
           <img src="/cart.png" className="cart" alt="cart" />
         </button>
+        <Link to="/updateABook">
+          <button className="updateBook">Edit book</button>
+        </Link>
+        ;
       </div>
       <p>{book.author}</p>
       <p>{book.description}</p>
