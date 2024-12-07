@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
 //to manage the shopping cart state and provides functions to interact with the cart
 //create Context object to be able to share data globally and avoid passing props
@@ -8,7 +9,6 @@ const ShoppingCartContext = createContext();
 //create a Provider component and a wrapper
 export const ShoppingCartProviderWrapper = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const API_URL = "http://localhost:5005/";
 
   const addToCart = () => {
     axios

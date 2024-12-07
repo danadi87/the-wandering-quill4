@@ -1,35 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-const RequestABook = ({ onSubmit }) => {
+const RequestABook = ({ setBooks }) => {
   const [formData, setFormData] = useState({
     title: "",
     author: "",
-    type: "",
-    edition: "",
+    genre: "",
+    description: "",
     name: "",
     phoneNumber: "",
     emailAdress: "",
   });
   const navigate = useNavigate();
-  const API_URL = "http://localhost:5005";
+
   useEffect(() => {
-    bookRequested();
+    //bookRequested();
   }, []);
 
-  const bookRequested = () => {
-    axios
-      .post(`${API_URL}/requested`)
-      .then((response) => setBooks(response.data))
-      .catch((error) => console.log(error));
-  };
+  const bookRequested = () => {};
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios
+      .post(`${API_URL}/requested`, formData)
+      .then((response) => {
+        setBooks((prev) => {
+          return [...prev, response.data];
+        });
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -80,20 +85,20 @@ const RequestABook = ({ onSubmit }) => {
           {/* Type Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="availability">Type</label>
+              <label htmlFor="availability">Genre</label>
             </div>
             <div className="col-field">
               <select
                 id="booktype"
-                name="type"
-                value={formData.type}
+                name="genre"
+                value={formData.genre}
                 onChange={handleChange}
                 required
                 className="field"
               >
                 <option value="">----Please Select----</option>
-                <option value="Hard Cover">Hard Cover</option>
-                <option value="Pocket version">Pocket version</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
               </select>
             </div>
           </div>
@@ -101,16 +106,15 @@ const RequestABook = ({ onSubmit }) => {
           {/* Edition Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="edition">Edition</label>
+              <label htmlFor="description">Description</label>
             </div>
             <div className="col-field">
               <input
-                type="number"
-                maxLength={254}
+                type="text"
                 id="edition"
-                name="edition"
+                name="description"
                 placeholder="Edition number"
-                value={formData.edition}
+                value={formData.description}
                 onChange={handleChange}
                 required
                 className="field"
@@ -132,7 +136,6 @@ const RequestABook = ({ onSubmit }) => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                required
                 className="field"
               />
             </div>
@@ -151,7 +154,6 @@ const RequestABook = ({ onSubmit }) => {
                 placeholder="Phone Number"
                 value={formData.phoneNumber}
                 onChange={handleChange}
-                required
                 className="field"
               />
             </div>
@@ -171,7 +173,6 @@ const RequestABook = ({ onSubmit }) => {
                 placeholder="Email Address"
                 value={formData.emailAdress}
                 onChange={handleChange}
-                required
                 className="field"
               />
             </div>

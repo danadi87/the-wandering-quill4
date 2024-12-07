@@ -15,6 +15,8 @@ import FavoritesContext from "./components/FavoritesContext.jsx";
 import ShoppingCartContext from "./components/ShoppingCartContext.jsx";
 import BooksRequested from "./components/BooksRequested.jsx";
 import BookDetails from "./components/BookDetails.jsx";
+import axios from "axios";
+import { API_URL } from "./config/apiConfig";
 
 function App() {
   // Access favorites context
@@ -23,14 +25,6 @@ function App() {
   const { cartItems } = useContext(ShoppingCartContext);
   const [books, setBooks] = useState([]);
 
-  //initialize with no books before filtering & restore filtered books
-  const [filteredBooks, setFilteredBooks] = useState(
-    JSON.parse(localStorage.getItem("filteredBooks")) || []
-  );
-  //checks if a filter is a applied & restore filtered view
-  const [isFilteredView, setFilteredView] = useState(
-    JSON.parse(localStorage.getItem("isFilteredView")) || false
-  );
   //get navigation on pages from React Router
   const navigate = useNavigate();
 
@@ -64,17 +58,17 @@ function App() {
     //navigate to the filtered view
     navigate("/filtered");
   };
+
   useEffect(() => {
-    //initialize books list from the localStorage
-    const storedFilteredBooks = JSON.parse(
-      localStorage.getItem("filteredBooks")
-    );
-    if (storedFilteredBooks && storedFilteredBooks.length) {
-      setFilteredBooks(storedFilteredBooks);
-    } else {
-      setFilteredBooks(BooksList); // Default to all books
-    }
+    const getAllBooks = () => {
+      axios
+        .get(`${API_URL}/books`)
+        .then((response) => setBooks(response.data))
+        .catch((error) => console.log(error));
+    };
+    getAllBooks();
   }, []);
+
   return (
     <>
       <Navbar />
@@ -84,14 +78,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
 
-          <Route
-            path="/filtered/:genre"
-            element={<FilteredBooks books={filteredBooks} />}
-          />
+          <Route path="/filtered/:genre" element={<FilteredBooks />} />
           <Route path="/book/:id" element={<BookDetails />} />
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
-          <Route path="/requestABook" element={<RequestABook />} />
+          <Route
+            path="/requestABook"
+            element={<RequestABook setBooks={setBooks} />}
+          />
           <Route path="/booksRequested" element={<BooksRequested />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

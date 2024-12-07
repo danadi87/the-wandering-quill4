@@ -7,10 +7,9 @@ import "/delete.png";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
 const FilteredBooks = ({ books }) => {
-  const API_URL = "http://localhost:5005/";
-
   const navigate = useNavigate();
   //define the selected book state
   const [selectedBook, setSelectedBook] = useState(null);

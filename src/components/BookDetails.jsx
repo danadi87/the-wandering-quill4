@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import heartIcon from "/heart.png";
 import cartIcon from "/cart.png";
+import { API_URL } from "../config/apiConfig";
+
 const BookDetails = () => {
-  const API_URL = "http://localhost:5005";
   const [book, setBook] = useState([]);
   const { id } = useParams();
 

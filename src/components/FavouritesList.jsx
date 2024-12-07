@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
-
 const FavouritesList = () => {
-  const { favorites, removeFavorite, addToFavorites } = useContext(FavoritesContext);
+  const { favorites, removeFavorite, addToFavorites } =
+    useContext(FavoritesContext);
   const { addToCart, isInCart } = useContext(ShoppingCartContext);
-
 
   return (
     <div className="favorites">
@@ -29,9 +28,9 @@ const FavouritesList = () => {
                   {/*add to cart button or disable button if already added to cart & displays "Added to cart" if the book is in the cart*/}
                   <button
                     onClick={() => addToCart(book.id)}
-                    disabled={isInCart(book.id)}
+                    // disabled={isInCart(book.id)}
                   >
-                    {isInCart(book.id) ? "Added to Cart" : "Add to Cart"}
+                    {/* {isInCart(book.id) ? "Added to Cart" : "Add to Cart"}*/}
                   </button>
                   <button onClick={() => removeFavorite(book.id)}>
                     Remove

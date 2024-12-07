@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
 //create Context object to be able to share data globally and avoid passing props
 const FavoritesContext = createContext();
@@ -7,7 +8,6 @@ const FavoritesContext = createContext();
 //create a Provider component and a wrapper
 export const FavoritesProviderWrapper = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
-  const API_URL = "http://localhost:5005/";
 
   const addFavorite = (book) => {
     axios
@@ -25,15 +25,24 @@ export const FavoritesProviderWrapper = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-  const removeFavorite = () => {
+  const removeFavorite = (bookId) => {
     axios
-      .delete(`${API_URL}/favorites`)
-      .then((response) => setFavorites(response.data))
+      .delete(`${API_URL}/favorites/${bookId}`)
+      .then((response) => {
+        console.log(response.data);
+        const newFavorites = favorites.filter((book) => {
+          if (bookId != book.id) return true;
+        });
+        setFavorites(newFavorites);
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    addFavorite, removeFavorite;
+    axios
+      .get(`${API_URL}/favorites`)
+      .then((response) => setFavorites(response.data))
+      .catch((error) => console.log(error));
   }, []);
 
   return (
