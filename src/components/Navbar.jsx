@@ -7,6 +7,7 @@ import Logo from "/Logo.png";
 import { useContext } from "react";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
+import BooksRequested from "./BooksRequested.jsx";
 
 const Navbar = () => {
   const { favorites } = useContext(FavoritesContext);

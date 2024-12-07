@@ -15,6 +15,7 @@ import FavoritesContext from "./components/FavoritesContext.jsx";
 import ShoppingCartContext from "./components/ShoppingCartContext.jsx";
 import BooksRequested from "./components/BooksRequested.jsx";
 import BookDetails from "./components/BookDetails.jsx";
+import UpdateBook from "./components/UpdateBook.jsx";
 import axios from "axios";
 import { API_URL } from "./config/apiConfig";
 
@@ -87,6 +88,7 @@ function App() {
             element={<RequestABook setBooks={setBooks} />}
           />
           <Route path="/booksRequested" element={<BooksRequested />} />
+          <Route path="/updateABook" element={<UpdateBook />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
