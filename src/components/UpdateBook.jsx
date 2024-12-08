@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
+import Booklist from "./BookList.jsx";
 
 const UpdateBook = (setBooks) => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const UpdateBook = (setBooks) => {
     pages: "",
     cover_image: "",
     publish_year: "",
+    price: "",
   });
 
   useEffect(() => {
@@ -70,47 +72,47 @@ const UpdateBook = (setBooks) => {
           />
         </div>
         <div>
-          <label>Type</label>
+          <label>Description</label>
           <input
             type="text"
             name="type"
-            value={formData.type}
+            value={formData.description}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Edition</label>
+          <label>Genre</label>
           <input
             type="text"
-            name="edition"
-            value={formData.edition}
+            name="genre"
+            value={formData.genre}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Name</label>
+          <label>Pages</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="pages"
+            value={formData.pages}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Phone Number</label>
+          <label>Publish Year</label>
           <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
+            type="number"
+            name="publish_year"
+            value={formData.publish_year}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Email Address</label>
+          <label>Price</label>
           <input
-            type="email"
-            name="emailAdress"
-            value={formData.emailAdress}
+            type="number"
+            name="price"
+            value={formData.price}
             onChange={handleInputChange}
           />
         </div>

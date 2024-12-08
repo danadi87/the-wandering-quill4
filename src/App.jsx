@@ -6,7 +6,7 @@ import Homepage from "./components/Homepage.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import RequestABook from "./components/RequestABook.jsx";
+import AddABook from "./components/AddABook.jsx";
 import FilteredBooks from "./components/FilteredBooks.jsx";
 import BooksList from "./assets/BooksList.json";
 import FavouritesList from "./components/FavouritesList.jsx";
@@ -18,6 +18,7 @@ import BookDetails from "./components/BookDetails.jsx";
 import UpdateBook from "./components/UpdateBook.jsx";
 import axios from "axios";
 import { API_URL } from "./config/apiConfig";
+import AboutUs from "./components/AboutUs.jsx";
 
 function App() {
   // Access favorites context
@@ -84,12 +85,10 @@ function App() {
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping_cart" element={<ShoppingCart />} />
           <Route path="/updateBook/:id" element={<UpdateBook />} />
-          <Route
-            path="/requestABook"
-            element={<RequestABook setBooks={setBooks} />}
-          />
+          <Route path="/addABook" element={<AddABook setBooks={setBooks} />} />
           <Route path="/booksRequested" element={<BooksRequested />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
         </Routes>
       </div>
       <Footer />

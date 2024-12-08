@@ -3,23 +3,25 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 
-const RequestABook = ({ setBooks }) => {
+const addABook = ({ setBooks }) => {
   const [formData, setFormData] = useState({
     title: "",
     author: "",
     genre: "",
     description: "",
-    name: "",
-    phoneNumber: "",
-    emailAdress: "",
+    short_description: "",
+    pages: "",
+    cover_image: "",
+    publish_year: "",
+    price: "",
   });
   const navigate = useNavigate();
 
   useEffect(() => {
-    //bookRequested();
+    //bookAdded();
   }, []);
 
-  const bookRequested = () => {};
+  const bookAdded = () => {};
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -27,7 +29,7 @@ const RequestABook = ({ setBooks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${API_URL}/requested`, formData)
+      .post(`${API_URL}/added`, formData)
       .then((response) => {
         setBooks((prev) => {
           return [...prev, response.data];
@@ -39,8 +41,8 @@ const RequestABook = ({ setBooks }) => {
 
   return (
     <div className="formBooks">
-      <form className="requestAbook" onSubmit={handleSubmit}>
-        <h2>Work with us</h2>
+      <form className="addAbook" onSubmit={handleSubmit}>
+        <h2>Add a book</h2>
         <div className="form-fields">
           {/* Title Field */}
           <div className="row">
@@ -70,7 +72,7 @@ const RequestABook = ({ setBooks }) => {
             <div className="col-field">
               <input
                 type="text"
-                maxLength={55}
+                maxLength={155}
                 id="author"
                 name="author"
                 placeholder="Author"
@@ -82,28 +84,7 @@ const RequestABook = ({ setBooks }) => {
             </div>
           </div>
 
-          {/* Type Field */}
-          <div className="row">
-            <div className="col-label">
-              <label htmlFor="availability">Genre</label>
-            </div>
-            <div className="col-field">
-              <select
-                id="booktype"
-                name="genre"
-                value={formData.genre}
-                onChange={handleChange}
-                required
-                className="field"
-              >
-                <option value="">----Please Select----</option>
-                <option value="Fiction">Fiction</option>
-                <option value="Non-Fiction">Non-Fiction</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Edition Field */}
+          {/* Description Field */}
           <div className="row">
             <div className="col-label">
               <label htmlFor="description">Description</label>
@@ -111,9 +92,8 @@ const RequestABook = ({ setBooks }) => {
             <div className="col-field">
               <input
                 type="text"
-                id="edition"
+                id="description"
                 name="description"
-                placeholder="Edition number"
                 value={formData.description}
                 onChange={handleChange}
                 required
@@ -122,56 +102,75 @@ const RequestABook = ({ setBooks }) => {
             </div>
           </div>
 
-          {/* Name Field */}
+          {/* Genre Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="location">Name</label>
+              <label htmlFor="genre">Genre</label>
+            </div>
+            <div className="col-field">
+              <input
+                type="text"
+                id="genre"
+                name="genre"
+                placeholder="Genre"
+                value={formData.genre}
+                onChange={handleChange}
+                required
+                className="field"
+              />
+            </div>
+          </div>
+
+          {/* Pages Field */}
+          <div className="row">
+            <div className="col-label">
+              <label htmlFor="location">Pages</label>
             </div>
             <div className="col-field">
               <input
                 type="text"
                 maxLength={254}
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
+                id="pages"
+                name="pages"
+                placeholder="Number of pages"
+                value={formData.pages}
                 onChange={handleChange}
                 className="field"
               />
             </div>
           </div>
 
-          {/* Phone Number Field */}
+          {/* Publish Year Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="phoneNumber">Phone Number</label>
+              <label htmlFor="publish_year">Publish year</label>
             </div>
             <div className="col-field">
               <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                value={formData.phoneNumber}
+                type="number"
+                id="publish_year"
+                name="publish_year"
+                placeholder="Publish Year"
+                value={formData.publish_year}
                 onChange={handleChange}
                 className="field"
               />
             </div>
           </div>
 
-          {/* Email Address Field */}
+          {/* Price Field */}
           <div className="row">
             <div className="col-label">
-              <label htmlFor="emailAdress">Email Address</label>
+              <label htmlFor="price">Price</label>
             </div>
             <div className="col-field">
               <input
-                type="email"
+                type="number"
                 maxLength={254}
-                id="emailAdress"
-                name="emailAdress"
-                placeholder="Email Address"
-                value={formData.emailAdress}
+                id="price"
+                name="price"
+                placeholder="price"
+                value={formData.price}
                 onChange={handleChange}
                 className="field"
               />
@@ -180,12 +179,12 @@ const RequestABook = ({ setBooks }) => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="add-RequestABook-button">
-          I want it!
+        <button type="submit" className="addABook-button">
+          Add my book!
         </button>
       </form>
     </div>
   );
 };
 
-export default RequestABook;
+export default addABook;
