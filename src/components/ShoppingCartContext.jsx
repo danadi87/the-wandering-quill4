@@ -10,20 +10,31 @@ const ShoppingCartContext = createContext();
 export const ShoppingCartProviderWrapper = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = () => {
+  const addToCart = (book) => {
     axios
-      .post(`${API_URL}/cart`)
-      .then((response) => setCart(response.data))
+      .post(`${API_URL}/cart`, book)
+      .then((response) => {
+        setCart((prevCart) => [...prevCart, response.data]);
+      })
       .catch((error) => console.log(error));
   };
-  const removeCart = () => {
+  const removeCart = (bookId) => {
     axios
-      .delete(`${API_URL}/cart`)
-      .then((response) => setCart(response.data))
+      .delete(`${API_URL}/cart/${bookId}`)
+      .then((response) => {
+        console.log(response.data);
+        const newCart = cart.filter((book) => {
+          if (bookId != book.id) return true;
+        });
+        setCart(newCart);
+      })
       .catch((error) => console.log(error));
   };
   useEffect(() => {
-    addToCart, removeCart;
+    axios
+      .get(`${API_URL}/cart`)
+      .then((response) => setCart(response.data))
+      .catch((error) => console.log(error));
   }, []);
   return (
     <ShoppingCartContext.Provider value={{ cart, addToCart, removeCart }}>

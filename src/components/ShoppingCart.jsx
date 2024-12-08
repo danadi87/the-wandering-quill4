@@ -3,7 +3,7 @@ import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
 //page to display books in the cart
 const ShoppingCart = () => {
-  const { cart, removeFromCart } = useContext(ShoppingCartContext);
+  const { cart, addToCart, removeFromCart } = useContext(ShoppingCartContext);
 
   return (
     <div className="cart">
@@ -13,13 +13,22 @@ const ShoppingCart = () => {
       ) : (
         <div className="list">
           {cart.map((book) => {
-            <div className="cartItem" key={book.id}>
-              <img src={book.cover_image} alt={book.title} />
-              <h2>{book.title}</h2>
-              <h4>{book.author}</h4>
-              <p>{book.price}</p>
-              <button onClick={() => removeFromCart(book.id)}>Remove</button>
-            </div>;
+            return (
+              <div className="cartItem" key={book.id}>
+                <img src={book.cover_image} alt={book.title} />
+                <h2>{book.title}</h2>
+                <h4>{book.author}</h4>
+                <p>{book.genre}</p>
+                <p>{book.pages}</p>
+                <p>{book.price}</p>
+                <div className="buttons">
+                  <button onClick={() => addToCart(book.id)}></button>
+                  <button onClick={() => removeFromCart(book.id)}>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            );
           })}
         </div>
       )}

@@ -82,13 +82,13 @@ function App() {
           <Route path="/filtered/:genre" element={<FilteredBooks />} />
           <Route path="/book/:id" element={<BookDetails />} />
           <Route path="/favorites" element={<FavouritesList />} />
-          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/shopping_cart" element={<ShoppingCart />} />
+          <Route path="/updateBook/:id" element={<UpdateBook />} />
           <Route
             path="/requestABook"
             element={<RequestABook setBooks={setBooks} />}
           />
           <Route path="/booksRequested" element={<BooksRequested />} />
-          <Route path="/updateABook" element={<UpdateBook />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

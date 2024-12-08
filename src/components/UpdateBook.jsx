@@ -3,44 +3,44 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 
-const UpdateBook = () => {
-  const { index } = useParams();
+const UpdateBook = (setBooks) => {
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: "",
     author: "",
-    type: "",
-    edition: "",
-    name: "",
-    phoneNumber: "",
-    emailAdress: "",
+    genre: "",
+    description: "",
+    short_description: "",
+    pages: "",
+    cover_image: "",
+    publish_year: "",
   });
 
   useEffect(() => {
-    const booksRequested = () => {
-      axios
-        .put(`${API_URL}/books`, formData)
-        .then((response) => {
-          setBooks((prev) => {
-            return [...prev, response.data];
-          });
-          console.log(response);
-        })
-        .catch((error) => console.log(error));
-    };
-    [];
-  });
+    axios
+      .get(`${API_URL}/books/${id}`)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSave = () => {
-    const booksUpdated = () => {
-      console.log(booksUpdated);
-    };
-    navigate("/");
+    axios
+      .put(`${API_URL}/books/${id}`, formData)
+      .then((response) => {
+        setBooks();
+        console.log(response.data);
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
   };
 
   const handleCancel = () => {

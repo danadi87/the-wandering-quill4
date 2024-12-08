@@ -11,17 +11,10 @@ export const FavoritesProviderWrapper = ({ children }) => {
 
   const addFavorite = (book) => {
     axios
-      .post(`${API_URL}/favorites`, {
-        title: "",
-        author: "",
-        genre: "",
-        description: "",
-        pages: "",
-        cover_image: "",
-        publish_year: "",
-        price: "",
+      .post(`${API_URL}/favorites`, book)
+      .then((response) => {
+        setFavorites((prevFavorites) => [...prevFavorites, response.data]);
       })
-      .then((response) => setFavorites(response.data))
       .catch((error) => console.log(error));
   };
 

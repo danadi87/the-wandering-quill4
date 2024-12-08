@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import BookCard from "./BookCard.jsx";
-import FavouritesList from "./FavouritesList.jsx";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config/apiConfig";

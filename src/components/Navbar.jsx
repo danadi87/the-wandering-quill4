@@ -24,7 +24,7 @@ const Navbar = () => {
         My Favourites<span>({favorites.length})</span>{" "}
       </Link>
       {/*display the shopping cart count*/}
-      <Link to="/cart">
+      <Link to="/shopping_cart">
         Shopping Cart<span>({cart.length})</span>
       </Link>
     </div>

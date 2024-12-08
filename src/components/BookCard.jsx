@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "../styles/BookCard.css";
 
-
 const BookCard = ({ book, deleteBook, addToFavorites }) => {
   const { title } = useParams();
 
@@ -19,7 +18,6 @@ const BookCard = ({ book, deleteBook, addToFavorites }) => {
     <div className="books-container">
       <div className="book-item">
         <img src={book.cover_image} alt={book.title} />
-       
         <h2>{book.title}</h2>
         <h4>{book.author}</h4>
       </div>

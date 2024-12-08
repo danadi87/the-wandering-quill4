@@ -21,9 +21,9 @@ const FavouritesList = () => {
                 <h2>{book.title}</h2>
                 <h4>{book.author}</h4>
                 <p>{book.genre}</p>
-                <p>{book.description}</p>
                 <p>{book.pages}</p>
                 <p>{book.publish_year}</p>
+                <p>{book.price}</p>
                 <div className="buttons">
                   {/*add to cart button or disable button if already added to cart & displays "Added to cart" if the book is in the cart*/}
                   <button
