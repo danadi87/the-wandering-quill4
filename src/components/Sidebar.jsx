@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "../styles/Sidebar.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from "../config/apiConfig";
 
-
-const Sidebar = ({ onFilter }) => {
-
+const Sidebar = ({ setBooks }) => {
   //for the search input
   const [inputState, setInputState] = useState("");
   const navigate = useNavigate();
@@ -26,6 +26,17 @@ const Sidebar = ({ onFilter }) => {
     if (inputState.trim() !== "") {
       navigate(`/search?query=${inputState.trim()}`);
     }
+  };
+  // Filter function
+  const handleFilter = (genre) => {
+    const filters = genre === "All" ? "/books" : `/books?genre=${genre}`;
+    axios
+      .get(`${API_URL}${filters}`)
+      .then((response) => {
+        setBooks(response.data); // Update the books list in the parent component
+        navigate(`/filter/${genre.toLowerCase()}`);
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div className="container">
@@ -56,14 +67,12 @@ const Sidebar = ({ onFilter }) => {
           </li>
           {genre.map((genre, id) => (
             <li key={id}>
-              <Link
-                to={`/filter/${genre.toLowerCase()}`}
-                onClick={(e) => {
-                  onFilter(genre); // Trigger filter
-                }}
+              <button
+                onClick={() => handleFilter(genre)}
+                className="filter-link"
               >
                 {genre}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>

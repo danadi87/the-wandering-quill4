@@ -75,12 +75,15 @@ function App() {
     <>
       <Navbar />
       {/*pass on the filter function to the sidebar*/}
-      <Sidebar onFilter={filterBooks} onNavigate={handleNavigation} />
+      <Sidebar setBooks={setBooks} onNavigate={handleNavigation} />
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Homepage />} />
 
-          <Route path="/filtered/:genre" element={<FilteredBooks />} />
+          <Route
+            path="/filtered/:genre"
+            element={<FilteredBooks books={filteredBooks} />}
+          />
           <Route path="/book/:id" element={<BookDetails />} />
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping_cart" element={<ShoppingCart />} />
