@@ -4,7 +4,7 @@ import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 import Booklist from "./BookList.jsx";
 
-const UpdateBook = (setBooks) => {
+const UpdateBook = ({ setBooks }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
