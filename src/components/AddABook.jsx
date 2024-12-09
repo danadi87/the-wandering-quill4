@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
+import Booklist from "./BookList.jsx";
 
 const addABook = ({ setBooks }) => {
   const [formData, setFormData] = useState({
@@ -29,12 +30,13 @@ const addABook = ({ setBooks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${API_URL}/added`, formData)
+      .post(`${API_URL}/books`, formData)
       .then((response) => {
         setBooks((prev) => {
           return [...prev, response.data];
         });
         console.log(response);
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };
