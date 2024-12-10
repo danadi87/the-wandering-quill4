@@ -4,7 +4,7 @@
   left: 0;
   width: 220px;
   z-index: 1;
-  background-color: rgb(246, 244, 241);
+  background-color: rgb(232, 207, 169);
   color: rgb(7, 75, 7);
   padding: 0px;
   display: flex;
@@ -30,4 +30,7 @@
   padding: 0px;
   margin-top: 40px;
   left: 0px;
+}
+.filter-link {
+  width: 50%;
 }

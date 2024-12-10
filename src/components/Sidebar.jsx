@@ -56,14 +56,16 @@ const Sidebar = ({ setBooks }) => {
         {/*Filter by genre*/}
         <ul className="sidebar">
           <li className="homepage">
-            <Link
-              to="/"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Home
-            </Link>
+            <button className="filter-link">
+              <Link
+                to="/"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Home
+              </Link>
+            </button>
           </li>
           {genre.map((genre, id) => (
             <li key={id}>

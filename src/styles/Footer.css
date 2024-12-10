@@ -1,7 +1,7 @@
 .footer {
   height: 3%;
   width: 100%;
-  background-color: #a6784c77;
+  background-color: #a6784c;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -32,4 +32,7 @@
     height: 35px;
     width: 50px;
   }
+}
+footer a {
+  color: #17637a;
 }

@@ -17,10 +17,11 @@ const BookCard = ({ book, deleteBook, addToFavorites }) => {
   return (
     <div className="books-container">
       <div className="book-item">
-        <img src={book.cover_image} alt={book.title} />
+        <img src={book.cover_image} alt={book.title} className="image" />
         <h2>{book.title}</h2>
-        <h4>{book.author}</h4>
-        <p>{book.short_description}</p>
+        <h4>by {book.author}</h4>
+        <p className="short-description">{book.short_description}</p>
+        <p>{book.price}€</p>
       </div>
     </div>
   );

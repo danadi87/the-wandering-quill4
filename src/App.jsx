@@ -80,10 +80,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
 
-          <Route
-            path="/filtered/:genre"
-            element={<FilteredBooks books={filteredBooks} />}
-          />
+          <Route path="/filtered/:genre" element={<FilteredBooks />} />
           <Route path="/book/:id" element={<BookDetails />} />
           <Route path="/favorites" element={<FavouritesList />} />
           <Route path="/shopping_cart" element={<ShoppingCart />} />
