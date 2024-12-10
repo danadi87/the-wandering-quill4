@@ -7,7 +7,6 @@ import Logo from "/Logo.png";
 import { useContext } from "react";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
-import BooksRequested from "./BooksRequested.jsx";
 
 const Navbar = () => {
   const { favorites } = useContext(FavoritesContext);
@@ -16,9 +15,7 @@ const Navbar = () => {
     <div className="navbar">
       <img src={Logo} alt="The Wandering Quill" className="app-logo"></img>
       <Link to="/"> The Wandering Quill</Link>
-      <Link to="/booksRequested">
-        <span>Books Requested</span>
-      </Link>
+
       {/*display the favorites count*/}
       <Link to="/favorites">
         My Favourites<span>({favorites.length})</span>{" "}

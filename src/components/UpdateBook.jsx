@@ -24,7 +24,7 @@ const UpdateBook = ({ setBooks }) => {
     axios
       .get(`${API_URL}/books/${id}`)
       .then((response) => {
-        console.log(response.data);
+        setFormData(response.data);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -54,6 +54,15 @@ const UpdateBook = ({ setBooks }) => {
       <h2>Edit Book</h2>
       <form className="edit-book-form">
         <div>
+          <label>Cover Image</label>
+          <input
+            type="text"
+            name="cover_image"
+            value={formData.cover_image}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
           <label>Title</label>
           <input
             type="text"
@@ -73,10 +82,17 @@ const UpdateBook = ({ setBooks }) => {
         </div>
         <div>
           <label>Description</label>
-          <input
-            type="text"
-            name="type"
+          <textarea
+            name="description"
             value={formData.description}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label>Short Description</label>
+          <textarea
+            name="short_description"
+            value={formData.short_description}
             onChange={handleInputChange}
           />
         </div>

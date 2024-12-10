@@ -5,7 +5,7 @@ import GitHubLogo from "/GitHubLogo.png";
 const Footer = () => {
   return (
     <div className="footer">
-      <Link to="https://github.com/danadi87/the-wandering-quill">
+      <Link to="https://github.com/danadi87/the-wandering-quill4">
         <img src={GitHubLogo} alt="Git Hub Logo" className="git-logo"></img>
       </Link>
       <Link to="/aboutUs">
