@@ -30,6 +30,7 @@ const FavouritesList = () => {
                     onClick={() => addToCart(book.id)}
                     // disabled={isInCart(book.id)}
                   >
+                    Add to cart
                     {/* {isInCart(book.id) ? "Added to Cart" : "Add to Cart"}*/}
                   </button>
                   <button onClick={() => removeFavorite(book.id)}>

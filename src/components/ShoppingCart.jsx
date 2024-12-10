@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
+import FavoritesContext from "./FavoritesContext.jsx";
 
 //page to display books in the cart
 const ShoppingCart = () => {
   const { cart, addToCart, removeFromCart } = useContext(ShoppingCartContext);
-
+  const { addFavorite } = useContext(FavoritesContext);
   return (
     <div className="cart">
       <h2>Shopping cart</h2>
@@ -22,7 +23,9 @@ const ShoppingCart = () => {
                 <p>{book.pages}</p>
                 <p>{book.price}</p>
                 <div className="buttons">
-                  <button onClick={() => addToCart(book.id)}></button>
+                  <button onClick={() => addFavorite(book.id)}>
+                    Add to Favorites
+                  </button>
                   <button onClick={() => removeFromCart(book.id)}>
                     Remove
                   </button>
