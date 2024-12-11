@@ -24,7 +24,7 @@ const UpdateBook = ({ setBooks }) => {
     axios
       .get(`${API_URL}/books/${id}`)
       .then((response) => {
-        console.log(response.data);
+        setFormData(response.data);
       })
       .catch((error) => console.log(error));
   }, []);

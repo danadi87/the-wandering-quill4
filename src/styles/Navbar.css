@@ -1,5 +1,5 @@
 .navbar {
-  height: 7%; /* Adjusted height for better visibility */
+  height: 9%; /* Adjusted height for better visibility */
   width: 100%; /* Full width */
   display: flex;
   justify-content: space-around; /* Spread out the items */
@@ -32,6 +32,6 @@
     font-size: 1em;
   }
 }
-.navbar a{
+.navbar a {
   color: #17637a;
 }

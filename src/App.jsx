@@ -13,7 +13,6 @@ import FavouritesList from "./components/FavouritesList.jsx";
 import ShoppingCart from "./components/ShoppingCart.jsx";
 import FavoritesContext from "./components/FavoritesContext.jsx";
 import ShoppingCartContext from "./components/ShoppingCartContext.jsx";
-import BooksRequested from "./components/BooksRequested.jsx";
 import BookDetails from "./components/BookDetails.jsx";
 import UpdateBook from "./components/UpdateBook.jsx";
 import axios from "axios";
@@ -89,7 +88,6 @@ function App() {
             element={<UpdateBook setBooks={setBooks} />}
           />
           <Route path="/addABook" element={<AddABook setBooks={setBooks} />} />
-          <Route path="/booksRequested" element={<BooksRequested />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/aboutUs" element={<AboutUs />} />
         </Routes>
