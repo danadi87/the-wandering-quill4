@@ -1,0 +1,36 @@
+.formBooks {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 85%;
+}
+.formBooks h2 {
+  font-size: 30px;
+}
+.row {
+  height: 55px;
+}
+.col-label {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.col-field {
+  float: right;
+  width: 65%;
+  text-align: left;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.addABook-button {
+  width: 60%;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.form-fields {
+  width: 100%;
+}

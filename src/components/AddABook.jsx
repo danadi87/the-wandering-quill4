@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 import Booklist from "./BookList.jsx";
+import "../styles/Addform.css";
 
 const addABook = ({ setBooks }) => {
   const [formData, setFormData] = useState({
@@ -104,6 +105,24 @@ const addABook = ({ setBooks }) => {
             </div>
           </div>
 
+          {/* Short Description Field */}
+          <div className="row">
+            <div className="col-label">
+              <label htmlFor="short_description">Short Description</label>
+            </div>
+            <div className="col-field">
+              <input
+                type="text"
+                id="short_description"
+                name="short_description"
+                value={formData.short_description}
+                onChange={handleChange}
+                required
+                className="field"
+              />
+            </div>
+          </div>
+
           {/* Genre Field */}
           <div className="row">
             <div className="col-label">
@@ -130,8 +149,7 @@ const addABook = ({ setBooks }) => {
             </div>
             <div className="col-field">
               <input
-                type="text"
-                maxLength={254}
+                type="number"
                 id="pages"
                 name="pages"
                 placeholder="Number of pages"
@@ -171,7 +189,7 @@ const addABook = ({ setBooks }) => {
                 maxLength={254}
                 id="price"
                 name="price"
-                placeholder="price"
+                placeholder="Price of the book"
                 value={formData.price}
                 onChange={handleChange}
                 className="field"
