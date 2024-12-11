@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 
-const Sidebar = ({ setBooks }) => {
+const Sidebar = () => {
   //for the search input
-  const [inputState, setInputState] = useState("");
+  const [books, setBooks] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   const genre = [
@@ -20,13 +21,6 @@ const Sidebar = ({ setBooks }) => {
     "Psychology",
   ];
 
-  //search bar function
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (inputState.trim() !== "") {
-      navigate(`/search?query=${inputState.trim()}`);
-    }
-  };
   // Filter function
   const handleFilter = (genre) => {
     const filters = genre === "All" ? "/books" : `/books?genre=${genre}`;
@@ -43,15 +37,17 @@ const Sidebar = ({ setBooks }) => {
       <div className="card">
         {/*Search bar*/}
         <div className="sidebar-search">
-          <form autoComplete="off" onSubmit={handleSearch}>
-            <input
-              type="text"
-              placeholder="Search..."
-              value={inputState}
-              onChange={(e) => setInputState(e.target.value)}
-            ></input>
-            <button type="submit">Search</button>
-          </form>
+          {/* <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          ></input>
+         {books.filter((book) => {
+            if (book.includes(searchTerm)) {
+              return true;
+            }
+          })}*/}
         </div>
         {/*Filter by genre*/}
         <ul className="sidebar">
