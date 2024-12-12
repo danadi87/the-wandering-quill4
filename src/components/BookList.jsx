@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config/apiConfig";
 
-const Booklist = () => {
+const Booklist = ({ searchTerm }) => {
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
@@ -51,15 +51,21 @@ const Booklist = () => {
     <div className="BookList">
       <div className="list">
         {books &&
-          books.map((book) => (
-            <Link to={`/book/${book.id}`} key={book.id}>
-              <BookCard
-                book={book}
-                deleteBook={deleteBook}
-                addToFavorites={addToFavorites}
-              />
-            </Link>
-          ))}
+          books
+            .filter((book) => {
+              if (book.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                return true;
+              }
+            })
+            .map((book) => (
+              <Link to={`/book/${book.id}`} key={book.id}>
+                <BookCard
+                  book={book}
+                  deleteBook={deleteBook}
+                  addToFavorites={addToFavorites}
+                />
+              </Link>
+            ))}
       </div>
     </div>
   );

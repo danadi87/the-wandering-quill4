@@ -3,7 +3,7 @@ import "../styles/Homepage.css";
 import Booklist from "./BookList.jsx";
 import { API_URL } from "../config/apiConfig";
 
-const Homepage = () => {
+const Homepage = ({ searchTerm }) => {
   useEffect(() => {
     const getAllBooks = () => {
       axios
@@ -17,7 +17,7 @@ const Homepage = () => {
     <div className="main-container">
       <div className="card">
         <article>
-          <Booklist />
+          <Booklist searchTerm={searchTerm} />
         </article>
       </div>
     </div>

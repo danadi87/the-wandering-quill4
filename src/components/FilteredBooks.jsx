@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/FilteredBooks.css";
 import "/heart.png";
 import "/cart.png";
@@ -7,22 +7,23 @@ import "/delete.png";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
-const FilteredBooks = ({ books }) => {
+const FilteredBooks = ({ books, searchTerm }) => {
   const navigate = useNavigate();
   //define the selected book state
   const [selectedBook, setSelectedBook] = useState(null);
-  const { addFavorite, removeFavorite } = useContext(FavoritesContext);
-  const { addToCart } = useContext(ShoppingCartContext);
+ // const { addFavorite, removeFavorite } = useContext(FavoritesContext);
+ // const { addToCart } = useContext(ShoppingCartContext);
+  const { genre } = useParams();
 
-  const genre = [
-    "All",
-    "Bestsellers",
-    "Fiction",
-    "Non-fiction",
-    "Business",
-    "Thriller",
-    "Psychology",
-  ];
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  useEffect(() => {
+    const booksFiltered = books.filter((oneBook) => {
+      if (oneBook.genre === genre) {
+        return true;
+      }
+    });
+    setFilteredBooks(booksFiltered);
+  }, [genre]);
 
   //set the clicked book as selected
   const handleBookClick = (book) => {
@@ -38,21 +39,21 @@ const FilteredBooks = ({ books }) => {
   };
   const handleClickFavorite = (id) => {
     console.log(`Favorite clicked for book ID: ${id}`);
-    useEffect(() => {
-      addFavorite, removeFavorite;
-    }, []);
+    //useEffect(() => {
+    //addFavorite, removeFavorite;
+    // }, []);
   };
   const handleClickCart = (id) => {
     console.log(`Add to cart clicked for book ID: ${id}`);
-    useEffect(() => {
-      addToCart, removeCart;
-    }, []);
+    //useEffect(() => {
+    //  addToCart, removeCart;
+    //}, []);
   };
 
   // Filter books based on genre
-  const filteredBooks = books.filter((book) =>
-    genre === "All" ? true : book.genre === genre
-  );
+  //const filteredBooks = books.filter((book) =>
+  //  genre === "All" ? true : book.genre === genre
+  // );
 
   if (filteredBooks.length === 0) {
     return <p>No books found for this genre.</p>;
@@ -75,7 +76,7 @@ const FilteredBooks = ({ books }) => {
   }
   return (
     <div className="books-container">
-      {books.map((book, id) => (
+      {filteredBooks.map((book, id) => (
         //set the book on click
         <div
           key={id}

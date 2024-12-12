@@ -5,10 +5,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
 
-const Sidebar = () => {
+const Sidebar = ({ searchTerm, setSearchTerm }) => {
   //for the search input
   const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
 
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ const Sidebar = () => {
     "All",
     "Bestsellers",
     "Fiction",
-    "Non-fiction",
+    "Nonfiction",
     "Business",
     "Thriller",
     "Psychology",
@@ -44,31 +43,23 @@ const Sidebar = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           ></input>
-          {books
-            .filter((book) => {
-              if (book.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                return true;
-              }
-            })
-            .map((book) => (
-              <div className="book-card" key={book.id}>
-                <Link to={`/books/${book.id}`}>
-                  <div className="book-item">
-                    <img
-                      src={book.cover_image}
-                      alt={book.title}
-                      className="image"
-                    />
-                    <h2>{book.title}</h2>
-                    <h4>by {book.author}</h4>
-                    <p className="short-description">
-                      {book.short_description}
-                    </p>
-                    <p>{book.price}€</p>
-                  </div>
-                </Link>
-              </div>
-            ))}
+          {books.map((book) => (
+            <div className="book-card" key={book.id}>
+              <Link to={`/books/${book.id}`}>
+                <div className="book-item">
+                  <img
+                    src={book.cover_image}
+                    alt={book.title}
+                    className="image"
+                  />
+                  <h2>{book.title}</h2>
+                  <h4>by {book.author}</h4>
+                  <p className="short-description">{book.short_description}</p>
+                  <p>{book.price}€</p>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
         {/*Filter by genre*/}
         <ul className="sidebar">
@@ -86,12 +77,9 @@ const Sidebar = () => {
           </li>
           {genre.map((genre, id) => (
             <li key={genre}>
-              <button
-                onClick={() => handleFilter(genre)}
-                className="filter-link"
-              >
-                {genre}
-              </button>
+              <Link to={`/filtered/${genre}`}>
+                <button className="filter-link">{genre}</button>
+              </Link>
             </li>
           ))}
         </ul>
