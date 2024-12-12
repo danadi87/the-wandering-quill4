@@ -1,0 +1,22 @@
+.book-item {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(192, 207, 192);
+  color: maroon;
+  text-align: center;
+  padding: 15px;
+  max-width: 50%;
+  max-height: 50%;
+  padding-top: 5px;
+}
+.image {
+  text-align: center;
+  width: 10%;
+}
+h2 {
+  font-style: italic;
+}
+.short-description {
+  padding: 30px;
+}

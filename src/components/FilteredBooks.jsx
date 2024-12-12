@@ -6,8 +6,6 @@ import "/cart.png";
 import "/delete.png";
 import FavoritesContext from "./FavoritesContext.jsx";
 import ShoppingCartContext from "./ShoppingCartContext.jsx";
-import axios from "axios";
-import { API_URL } from "../config/apiConfig";
 
 const FilteredBooks = ({ books }) => {
   const navigate = useNavigate();
@@ -15,6 +13,16 @@ const FilteredBooks = ({ books }) => {
   const [selectedBook, setSelectedBook] = useState(null);
   const { addFavorite, removeFavorite } = useContext(FavoritesContext);
   const { addToCart } = useContext(ShoppingCartContext);
+
+  const genre = [
+    "All",
+    "Bestsellers",
+    "Fiction",
+    "Non-fiction",
+    "Business",
+    "Thriller",
+    "Psychology",
+  ];
 
   //set the clicked book as selected
   const handleBookClick = (book) => {
