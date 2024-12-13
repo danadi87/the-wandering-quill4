@@ -53,10 +53,10 @@ const BookDetails = () => {
       </div>
       <p>{book.author}</p>
       <p>{book.description}</p>
-      <p>{book.genre}</p>
-      <p>{book.pages}</p>
-      <p>{book.publish_year}</p>
-      <p>{book.price}€</p>
+      <p>Genre: {book.genre}</p>
+      <p>Pages: {book.pages}</p>
+      <p>Publish Year: {book.publish_year}</p>
+      <p>Price: {book.price}€</p>
     </div>
   );
 };

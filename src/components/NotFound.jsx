@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "/notFound.png";
+import "../styles/NotFound.css";
 
 const NotFoundPage = () => {
   return (
-    <div className="not-found-page">
+    <div className="notfound">
+      <img src="/notFound.png" />
+      <div></div>
       <h1>404 - Page Not Found</h1>
       <p>
         Welcome to The Wandering Quill, where every book tells a story — but it
