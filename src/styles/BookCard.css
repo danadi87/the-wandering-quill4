@@ -1,11 +1,9 @@
 .book-item {
-  flex: 1 1 calc(50% - 32px); /* Make each item take up 50% width minus the gap */
-  max-width: calc(50% - 32px); /* Ensure maximum width is 50% minus gap */
+  display: flex;
+  justify-content: center;
   box-sizing: border-box; /* Include padding and border in the width calculation */
   position: relative;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   background-color: rgb(192, 207, 192);
   color: maroon;
   text-align: center;
@@ -21,16 +19,14 @@ h2 {
   font-style: italic;
 }
 .short-description {
-  padding: 30px;
+  padding: 10px;
 }
 .books-container {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next row */
-  gap: 16px; /* Adjust spacing between items */
-  justify-content: space-between; /* Adjust alignment for multiple rows */
-  padding: 20px; /* Add padding around the container */
+  justify-content: center; /* Adjust alignment for multiple rows */
+  padding-bottom: 20px; /* Add padding around the container */
   margin: 0 auto; /* Center the container */
-  max-width: 1200px; /* Optional: Restrict max width of the container */
+  width: 1500px; /* Optional: Restrict max width of the container */
 }
 .price {
   display: flex;
