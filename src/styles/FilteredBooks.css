@@ -1,5 +1,7 @@
-img {
-  width: 5%;
+.cover-image {
+  width: 30%;
+  display: block;
+  margin: 20px auto;
 }
 button {
   width: 25%;
@@ -7,4 +9,48 @@ button {
   margin: 10px;
   padding: 0px;
   background-color: #a6784c77;
+}
+button img {
+  width: 15%;
+  display: inline-block;
+  margin: 2px 0px;
+}
+.book-details {
+  text-align: center;
+}
+.genre {
+  display: inline-block;
+  background-color: rgb(238, 188, 95);
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+.books-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  gap: 16px; /* Adjust spacing between items */
+  justify-content: space-evenly; /* Adjust alignment */
+  padding-top: 20px; /* Adjust spacing to clear the navbar height */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Optional: Restrict max width of the container */
+}
+.book-item {
+  flex: 0 1 calc(50% - 32px); /* Make each item take up 50% width minus the gap */
+  max-width: calc(50% - 32px); /* Ensure maximum width is 50% minus gap */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(192, 207, 192);
+  color: maroon;
+  text-align: center;
+  padding: 15px;
+}
+.buttons {
+  width: fit-content;
+  height: 100px;
 }

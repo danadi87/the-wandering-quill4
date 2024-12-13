@@ -1,4 +1,7 @@
 .book-item {
+  flex: 0 1 calc(50% - 32px); /* Make each item take up 50% width minus the gap */
+  max-width: calc(50% - 32px); /* Ensure maximum width is 50% minus gap */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,13 +9,9 @@
   background-color: rgb(192, 207, 192);
   color: maroon;
   text-align: center;
-  padding: 15px;
-  max-width: 50%;
-  max-height: 50%;
-  padding-top: 5px;
-  flex: 0 1 calc(50% - 16px); /* Make each item take up 50% width minus the gap */
-  max-width: calc(50% - 16px); /* Ensure maximum width is 50% minus gap */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding: 5px;
+  align-items: center;
+  line-height: 1.5rem;
 }
 .image {
   text-align: center;
@@ -29,4 +28,23 @@ h2 {
   flex-wrap: wrap; /* Allows items to wrap to the next row */
   gap: 16px; /* Adjust spacing between items */
   justify-content: space-evenly; /* Adjust alignment */
+  padding-top: 80px; /* Adjust spacing to clear the navbar height */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Optional: Restrict max width of the container */
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  max-width: 20%;
+  padding: 10px;
+  background-color: rgb(176, 163, 115);
+}
+.cover-image-card {
+  width: 20%;
+  display: block;
+  margin: 20px auto;
 }

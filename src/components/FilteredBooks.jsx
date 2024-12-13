@@ -4,26 +4,25 @@ import "../styles/FilteredBooks.css";
 import "/heart.png";
 import "/cart.png";
 import "/delete.png";
-import FavoritesContext from "./FavoritesContext.jsx";
-import ShoppingCartContext from "./ShoppingCartContext.jsx";
 
 const FilteredBooks = ({ books, searchTerm }) => {
   const navigate = useNavigate();
   //define the selected book state
   const [selectedBook, setSelectedBook] = useState(null);
- // const { addFavorite, removeFavorite } = useContext(FavoritesContext);
- // const { addToCart } = useContext(ShoppingCartContext);
   const { genre } = useParams();
 
   const [filteredBooks, setFilteredBooks] = useState([]);
   useEffect(() => {
     const booksFiltered = books.filter((oneBook) => {
-      if (oneBook.genre === genre) {
-        return true;
+      if (searchTerm) {
+        // If searchTerm is active, only filter by searchTerm
+        return oneBook.title.toLowerCase().includes(searchTerm.toLowerCase());
       }
+      // Otherwise, filter by genre
+      return genre === "All" || oneBook.genre === genre;
     });
     setFilteredBooks(booksFiltered);
-  }, [genre]);
+  }, [genre, searchTerm, books]);
 
   //set the clicked book as selected
   const handleBookClick = (book) => {
@@ -39,21 +38,10 @@ const FilteredBooks = ({ books, searchTerm }) => {
   };
   const handleClickFavorite = (id) => {
     console.log(`Favorite clicked for book ID: ${id}`);
-    //useEffect(() => {
-    //addFavorite, removeFavorite;
-    // }, []);
   };
   const handleClickCart = (id) => {
     console.log(`Add to cart clicked for book ID: ${id}`);
-    //useEffect(() => {
-    //  addToCart, removeCart;
-    //}, []);
   };
-
-  // Filter books based on genre
-  //const filteredBooks = books.filter((book) =>
-  //  genre === "All" ? true : book.genre === genre
-  // );
 
   if (filteredBooks.length === 0) {
     return <p>No books found for this genre.</p>;
@@ -83,7 +71,7 @@ const FilteredBooks = ({ books, searchTerm }) => {
           className="book-item"
           onClick={() => handleBookClick(book)}
         >
-          <img src={book.cover_image} alt={book.title} />
+          <img src={book.cover_image} alt={book.title} className="cover-image" />
           <div className="buttons">
             <button
               type="button"
@@ -106,12 +94,21 @@ const FilteredBooks = ({ books, searchTerm }) => {
             </button>
           </div>
           <h2>{book.title}</h2>
-          <h4>{book.author}</h4>
-          <p>{book.genre}</p>
-          <p>{book.description}</p>
-          <p>{book.pages}</p>
-          <p>{book.publish_year}</p>
-          <p>{book.price}€</p>
+          <h4>by {book.author}</h4>
+          <p className="genre">{book.genre}</p>
+          <p>{book.short_description}</p>
+          <p>
+            <strong>Pages: </strong>
+            {book.pages}
+          </p>
+          <p>
+            <strong>Publishing year: </strong>
+            {book.publish_year}
+          </p>
+          <p>
+            <strong>Price: </strong>
+            {book.price}€
+          </p>
         </div>
       ))}
     </div>

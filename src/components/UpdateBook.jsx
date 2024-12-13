@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../config/apiConfig";
-import Booklist from "./BookList.jsx";
 import "../styles/Editform.css";
 
 const UpdateBook = ({ setBooks }) => {
