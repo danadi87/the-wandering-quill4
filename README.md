@@ -70,7 +70,7 @@ The BookList is built of Book Cards. Every Card is built of below sections.
 - Book Info: title, author, short description and price are displayed.
 
 - Book Details: Clicking on the Card loads the Homepage section with the Book Details. </br>
-  <img src="" alt="Book Details" width="500"/></br>
+  <img src="./src/assets/imagesReadme/BookDetails.png" alt="Book Details" width="500"/></br>
   The Book Details is built of below.
 
   - Image: A small image of the book cover.
