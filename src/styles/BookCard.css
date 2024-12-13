@@ -1,11 +1,11 @@
 .book-item {
-  flex: 0 1 calc(50% - 32px); /* Make each item take up 50% width minus the gap */
+  flex: 1 1 calc(50% - 32px); /* Make each item take up 50% width minus the gap */
   max-width: calc(50% - 32px); /* Ensure maximum width is 50% minus gap */
   box-sizing: border-box; /* Include padding and border in the width calculation */
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   background-color: rgb(192, 207, 192);
   color: maroon;
   text-align: center;
@@ -23,12 +23,12 @@ h2 {
 .short-description {
   padding: 30px;
 }
-.book-container {
+.books-container {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap to the next row */
   gap: 16px; /* Adjust spacing between items */
-  justify-content: space-evenly; /* Adjust alignment */
-  padding-top: 80px; /* Adjust spacing to clear the navbar height */
+  justify-content: space-between; /* Adjust alignment for multiple rows */
+  padding: 20px; /* Add padding around the container */
   margin: 0 auto; /* Center the container */
   max-width: 1200px; /* Optional: Restrict max width of the container */
 }

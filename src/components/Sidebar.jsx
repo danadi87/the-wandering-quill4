@@ -13,7 +13,6 @@ const Sidebar = ({ searchTerm, setSearchTerm }) => {
 
   const genre = [
     "All",
-    "Bestsellers",
     "Fiction",
     "Nonfiction",
     "Business",

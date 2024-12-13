@@ -1,9 +1,10 @@
 import React from "react";
+import "../styles/About.css";
 
 const AboutUs = () => {
   return (
-    <div>
-      <h1>About Us</h1>
+    <div className="about">
+      <h1 className="title-about">About Us</h1>
       <p>
         Welcome to <strong>The Wandering Quill</strong>, a modern library where
         the love of books meets convenience. Whether you're a passionate reader,

@@ -5,10 +5,10 @@ import "../styles/ShoppingCart.css";
 
 //page to display books in the cart
 const ShoppingCart = () => {
-  const { cart, addToCart, removeFromCart } = useContext(ShoppingCartContext);
+  const { cart, removeCart } = useContext(ShoppingCartContext);
   const { addFavorite } = useContext(FavoritesContext);
   return (
-    <div className="cart">
+    <div className="cart-container">
       <h1 className="title-cart">Shopping cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty!</p>
@@ -32,13 +32,13 @@ const ShoppingCart = () => {
                 <div className="buttons-favorites-list">
                   <button
                     className="favorites-list"
-                    onClick={() => addFavorite(book.id)}
+                    onClick={() => addFavorite(book)}
                   >
                     Add to Favorites
                   </button>
                   <button
                     className="favorites-list"
-                    onClick={() => removeFromCart(book.id)}
+                    onClick={() => removeCart(book.id)}
                   >
                     Remove
                   </button>

@@ -29,7 +29,11 @@ const BookDetails = () => {
 
   return (
     <div className="book-details">
-      <img src={book.cover_image} alt={book.title} className="cover-image-details" />
+      <img
+        src={book.cover_image}
+        alt={book.title}
+        className="cover-image-details"
+      />
       <h1>{book.title}</h1>
       <h3 className="author">by {book.author}</h3>
       <div className="buttons">

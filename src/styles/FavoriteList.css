@@ -68,3 +68,7 @@ button:hover {
 p {
   padding-left: 20px;
 }
+.favorites {
+  padding-top: 60px; /* Adjust the value to match your navbar height */
+  padding-bottom: 60px;
+}
