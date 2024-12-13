@@ -1,27 +1,59 @@
-.cover-image {
-  width: 15%;
+.cover-image-details {
+  width: 8%;
   display: block;
   margin: 20px auto;
+  padding-top: 50px;
 }
 button {
   width: 25%;
   height: 25%;
   margin: 10px;
-  padding: 0px;
   background-color: #a6784c77;
 }
 
 .cart-details {
-  width: 15%;
+  width: 25%;
   display: inline-block;
-  margin: 2px 0px;
 }
 .favourite-details {
-  width: 15%;
+  width: 25%;
   display: inline-block;
-  margin: 2px 10px;
 }
 .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: fit-content;
   height: 100px;
+}
+.book-details {
+  display: block;
+  margin-left: 220px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+}
+.updateBook {
+  width: fit-content;
+  height: 30px;
+  margin: 2px 130px;
+  padding: 0 20px;
+}
+.author {
+  color: darkgreen;
+}
+.details {
+  display: flex;
+  justify-content: center;
+}
+.paragraph {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid darkgreen;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin: 20px 120px;
+  padding: 10px 20px;
+}
+.main-content {
+  margin-top: 0 !important;
 }

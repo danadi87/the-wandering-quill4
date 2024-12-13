@@ -28,9 +28,10 @@ const BookDetails = () => {
   };
 
   return (
-    <div>
-      <img src={book.cover_image} alt={book.title} className="cover-image" />
+    <div className="book-details">
+      <img src={book.cover_image} alt={book.title} className="cover-image-details" />
       <h1>{book.title}</h1>
+      <h3 className="author">by {book.author}</h3>
       <div className="buttons">
         <Link to={`/favorites/`}>
           <button
@@ -55,24 +56,26 @@ const BookDetails = () => {
           <button className="updateBook">Edit book</button>
         </Link>
       </div>
-      <p>by {book.author}</p>
+
       <p>{book.description}</p>
-      <p>
-        <strong>Genre: </strong>
-        {book.genre}
-      </p>
-      <p>
-        <strong>Pages: </strong>
-        {book.pages}
-      </p>
-      <p>
-        <strong>Publish Year: </strong>
-        {book.publish_year}
-      </p>
-      <p>
-        <strong>Price: </strong>
-        {book.price}€
-      </p>
+      <div className="details">
+        <p className="paragraph">
+          <strong>Genre: </strong>
+          {book.genre}
+        </p>
+        <p className="paragraph">
+          <strong>Pages: </strong>
+          {book.pages}
+        </p>
+        <p className="paragraph">
+          <strong>Publish Year: </strong>
+          {book.publish_year}
+        </p>
+        <p className="paragraph">
+          <strong>Price: </strong>
+          {book.price}€
+        </p>
+      </div>
     </div>
   );
 };
